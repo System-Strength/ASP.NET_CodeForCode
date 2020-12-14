@@ -1,0 +1,199 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CoffeeForCode</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #fff6e5;
+            display: flex;
+            position: fixed;
+            width: 100vw;
+        }
+
+        .logo {
+            margin-left: 8%;
+            width: 6vw;
+            height: 12vh;
+        }
+
+        #loc {
+            background-color: #9f4845;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            width: 90%;
+            margin: 2%;
+        }
+
+        li a {
+            font: bold 12pt comic Sans MS;
+            text-decoration: none;
+            color: #707070;
+            display: flex;
+            padding: 6px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            list-style: none;
+            margin-left: 10vw;
+        }
+
+            li a:hover {
+                background-color: #9f4845;
+                color: white;
+                transition: 0.5s;
+            }
+
+        main {
+            display: flex;
+            height: 90vh;
+        }
+
+        .main_one {
+            padding-top: 10%;
+            padding-left: 9%;
+            display: block;
+        }
+
+        h1 {
+            font: normal 35pt comic Sans MS;
+            text-transform: uppercase;
+            color: #707070;
+        }
+
+        h2 {
+            font: bold 35pt comic Sans MS;
+            text-transform: uppercase;
+            color: #b09081;
+        }
+
+        h3 {
+            font: normal 25pt Candara;
+            color: #707070;
+        }
+
+        .button {
+            background-color: #9f4845;
+            padding: 10px;
+            border-radius: 25px;
+            width: 15vw;
+            color: white;
+            font: bold 12pt Candara;
+            border: none;
+            margin-left: 15%;
+            cursor: pointer;
+            transition: ease-in 0.5s;
+        }
+
+            .button:hover {
+                background-color: #6b4d41;
+            }
+
+        .main_two {
+            margin: 0;
+            padding-top: 10%;
+            padding-left: 9%;
+            display: block;
+        }
+
+        .circle {
+            margin-top: 5%;
+            display: flex;
+            height: 70vh;
+            width: 35vw;
+            background-color: #b78278;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+
+        .sliders img {
+            margin-top: -3%;
+            margin-left: 2%;
+            opacity: 0;
+            position: absolute;
+            width: 18vw;
+            height: 70vh;
+            transition: ease-in 1s;
+        }
+
+            .sliders img.selected {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="~/fonts/Home_Cliente/logo_copo.png" class="logo" alt="">
+            <ul>
+                <li><a href="~/Views/Cliente/Home.cshtml" id="loc">Home</a></li>
+                <li><a href="">Cardápio</a></li>
+                <li><a href="">Seja parceiro</a></li>
+                <li><a href="">Trabalhe conosco</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="main_one">
+                <h1>Escolha a <mark style="font: bold 35pt Berlin Sans FB; background: none; color: #6b4d41;">CFC!<mark></h1>
+                <h2>
+                    O café para começar<br> seu dia!<h2>
+                        <h3>Bem-vindo a <mark style="font: bold 20pt Berlin Sans FB; background: none; color: #6b4d41; text-transform: uppercase;">CoffeeForCode</mark>,<br> onde vendemos alimentos e bebidas<br> de ótima qualidade e confiança.</h3>
+                        <a href=""><input type="button" class="button" value="SAIBA MAIS"></a>
+            </div>
+            <div class="main_two">
+                <div class="circle">
+                    <div class="sliders">
+                        <img src="~/fonts/Home_Cliente/cafe_home.png" class="selected" alt="" style="width: 18vw;
+                        height: 70vh;">
+                        <img src="~/fonts/Home_Cliente/burguer_home.png" alt="" style="width: 35vw;
+                        height: 60vh; margin-left: -5%; margin-top:  2%;">
+                        <img src="~/fonts/Home_Cliente/macchiato_home.png" alt="" style="width: 35vw;
+                        height: 75vh;  margin-left: -5%; margin-top:  -5%;">
+                        <img src="~/fonts/Home_Cliente/cookie_home.png" alt="" style="width: 20vw;
+                        height: 50vh;  margin-left: 2%; margin-top:  5%;">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </header>
+    <script>
+        let time = 3000,
+            currentImageWeb = 0,
+            images = document.querySelectorAll(".sliders img")
+        max = images.length;
+
+        function nextImage() {
+            images[currentImageWeb].classList.remove("selected")
+
+            currentImageWeb++
+
+            if (currentImageWeb >= max)
+                currentImageWeb = 0
+
+            images[currentImageWeb].classList.add("selected")
+        }
+        function startImage() {
+            setInterval(() => {
+                //Troca Imagem
+                nextImage();
+            }, time)
+        }
+        window.addEventListener("load", startImage)
+    </script>
+</body>
+</html>
