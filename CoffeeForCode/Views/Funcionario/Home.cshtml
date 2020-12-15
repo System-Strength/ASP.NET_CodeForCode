@@ -31,17 +31,15 @@
         .navigation {
             z-index: 6000;
             position: fixed;
-            width: 60px;
+            width: 65px;
             height: 100%;
             background: #fff6e5;
             transition: 0.5s;
             overflow: hidden;
         }
-
-            .navigation:hover, .navigation.active {
-                width: 300px;
-                z-index: 6000;
-            }
+        .navigation:hover {
+            width: 250px;
+        }
 
             .navigation ul {
                 position: absolute;
@@ -56,9 +54,12 @@
                     list-style: none;
                 }
 
-                    .navigation ul li:hover {
+                    .navigation ul li {
                         background: #B09081;
                     }
+                        .navigation ul li:hover {
+                            border: solid 5px #5E3F34;
+                        }
 
                     .navigation ul li a {
                         position: relative;
@@ -91,6 +92,13 @@
                             text-align: start;
                             white-space: nowrap;
                         }
+
+        #loc {
+            background-color: #5E3F34;
+        }
+        #loc:hover{
+            border: solid 5px #31221c
+        }
 
         .toggle {
             position: absolute;
@@ -139,11 +147,16 @@
 <body onload="time">
     <div class="navigation">
         <ul>
-            <img src="~/fonts/"/>
-            <li>
+            <li style="background: none; border: none">
                 <a href="Index">
-                    <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
-                    <span class="title">Home</span>
+                    <img src="~/fonts/Home_Func/logo_copo.png" style=" width: 5vw; height: 10vh; display: flex;">
+                    <span class="title" style="color: #5E3F34; font: bold 15pt Berlin Sans FB; padding-top: 10%;">CoffeeForCode</span>
+                </a>
+            </li>
+            <li id="loc">
+                <a href="Index">
+                    <span class="icon"><i class="fa fa-home" aria-hidden="true" style=" color:#fff6e5; font-size:2em;padding-top: 26%;"></i></span>
+                    <span class="title" style="color:#fff6e5;font:bold 1.3em comic Sans MS; padding-top: 7%;">Home</span>
                 </a>
             </li>
             <li>
@@ -152,17 +165,10 @@
                     <span class="title">Funcionários</span>
                 </a>
             </li>
-
             <li>
                 <a href="ClientesCadastrados">
                     <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
-                    <span class="title">Consultar Clientes</span>
-                </a>
-            </li>
-            <li>
-                <a href="CadastrarCli">
-                    <span class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
-                    <span class="title">Novo Cliente</span>
+                    <span class="title">Clientes</span>
                 </a>
             </li>
             <li>
