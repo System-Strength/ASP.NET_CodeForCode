@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +25,7 @@
 
         body {
             min-height: 100vh;
-            background: #88d9de;
+            background: #fff;
         }
 
         .navigation {
@@ -30,7 +33,7 @@
             position: fixed;
             width: 60px;
             height: 100%;
-            background: #171720;
+            background: #fff6e5;
             transition: 0.5s;
             overflow: hidden;
         }
@@ -54,7 +57,7 @@
                 }
 
                     .navigation ul li:hover {
-                        background: #00aeff;
+                        background: #B09081;
                     }
 
                     .navigation ul li a {
@@ -95,12 +98,12 @@
             right: 0;
             width: 60px;
             height: 60px;
-            background-color: #171720;
+            background-color: #fff6e5;
             cursor: pointer;
         }
 
             .toggle.active {
-                background-color: #00aeff;
+                background-color: #fff6e5;
             }
 
             .toggle:before {
@@ -136,6 +139,7 @@
 <body onload="time">
     <div class="navigation">
         <ul>
+            <img src="~/fonts/"/>
             <li>
                 <a href="Index">
                     <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
@@ -214,8 +218,6 @@
             toggle.classList.toggle('active');
         }
     </script>
-    @RenderBody()
     @Scripts.Render("~/bundles/inputmask")
-    @RenderSection("scripts", required: false)
 </body>
 </html>
