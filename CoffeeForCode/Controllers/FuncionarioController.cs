@@ -9,7 +9,7 @@ namespace CoffeeForCode.Controllers
     public class FuncionarioController : Controller
     {
         // GET: Funcionario
-        public ActionResult Index()
+        public ActionResult Home()
         {
             return View();
         }
