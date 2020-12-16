@@ -37,7 +37,7 @@
             transition: 0.5s;
             overflow: hidden;
         }
-        .navigation:hover {
+        .navigation:hover, .navigation.active{
             width: 270px;
         }
 
@@ -124,7 +124,7 @@
                 line-height: 60px;
                 text-align: center;
                 font-size: 24px;
-                color: #fff;
+                color: #5E3F34;
             }
 
             .toggle.active:before {
@@ -142,6 +142,10 @@
             left: 0px;
             width: 100%;
         }
+        }
+        section{
+            display: inline-flex;
+            margin: 20% 25%;
         }
     </style>
 </head>
@@ -211,6 +215,9 @@
         </ul>
     </div>
     <div class="toggle" onclick="toggleMenu()"></div>
+    <section>
+        <h1 style="font: bold 20pt Berlin Sans FB; background: none; color: #6b4d41; text-transform: uppercase;">CoffeeForCode</h1>
+    </section>
     <script type="text/javascript">
         function toggleMenu() {
             var navigation = document.querySelector('.navigation');
@@ -219,6 +226,5 @@
             toggle.classList.toggle('active');
         }
     </script>
-    @Scripts.Render("~/bundles/inputmask")
 </body>
 </html>
