@@ -174,9 +174,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\Home_Cliente\logo.png" />
     <Content Include="fonts\Home_Cliente\logo_copo.png" />
+    <Content Include="fonts\Home_Func\burguer_home.png" />
+    <Content Include="fonts\Home_Func\cafe_home.png" />
+    <Content Include="fonts\Home_Func\cookie_home.png" />
+    <Content Include="fonts\Home_Func\logo.png" />
     <Content Include="fonts\Home_Func\logo_copo.png" />
     <Content Include="fonts\Home_Cliente\macchiato_home.png" />
     <Content Include="fonts\Home_Cliente\pepsi_home.png" />
+    <Content Include="fonts\Home_Func\macchiato_home.png" />
+    <Content Include="fonts\Home_Func\pepsi_home.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Js\alertify.js" />
