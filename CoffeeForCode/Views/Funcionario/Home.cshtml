@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema - Palace Petz</title>
+    <title>Sistema - CFC</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Func/logo_copo.png" type="image/png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" />
     <link href="~/Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -37,9 +38,10 @@
             transition: 0.5s;
             overflow: hidden;
         }
-        .navigation:hover, .navigation.active{
-            width: 270px;
-        }
+
+            .navigation:hover, .navigation.active {
+                width: 270px;
+            }
 
             .navigation ul {
                 position: absolute;
@@ -55,12 +57,13 @@
                     list-style: none;
                 }
 
-                    .navigation ul li {
-                        background: #B09081;
+                .navigation ul li {
+                    background: #B09081;
+                }
+
+                    .navigation ul li:hover {
+                        border: solid 5px #5E3F34;
                     }
-                        .navigation ul li:hover {
-                            border: solid 5px #5E3F34;
-                        }
 
                     .navigation ul li a {
                         position: relative;
@@ -97,9 +100,10 @@
         #loc {
             background-color: #5E3F34;
         }
-        #loc:hover{
-            border: solid 5px #31221c
-        }
+
+            #loc:hover {
+                border: solid 5px #31221c
+            }
 
         .toggle {
             position: absolute;
@@ -142,11 +146,48 @@
             left: 0px;
             width: 100%;
         }
+
         }
-        section{
+
+        section {
             display: inline-flex;
-            margin: 15% 15%;
+            margin: 7% 15%;
         }
+
+        .content_one {
+            padding-left: 1%;
+            padding-top: 10%;
+        }
+
+        .content_two {
+            padding-left: 10%;
+            display: block;
+        }
+
+        .circle {
+            display: flex;
+            height: 70vh;
+            width: 35vw;
+            background-color: #b78278;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+
+        .sliders img {
+            margin-top: -3%;
+            margin-left: 2%;
+            opacity: 0;
+            position: absolute;
+            width: 18vw;
+            height: 70vh;
+            transition: ease-in 1s;
+        }
+
+            .sliders img.selected {
+                opacity: 1;
+            }
     </style>
 </head>
 <body onload="time">
@@ -218,7 +259,7 @@
     <section>
         <div class="content_one">
             <h1 style="font: bold 40pt Berlin Sans FB; background: none; color: #6b4d41; text-transform: uppercase;">CoffeeForCode</h1>
-            <h2 style=" font: bold 30pt comic Sans MS; text-transform: uppercase; color: #b09081;">O café para começar<br> seu dia!</h2>
+            <h2 style=" font: bold 30pt comic Sans MS; text-transform: uppercase; color: #b09081;">O café para começar seu dia!</h2>
         </div>
         <div class="content_two">
             <div class="circle">
@@ -242,6 +283,28 @@
             navigation.classList.toggle('active');
             toggle.classList.toggle('active');
         }
+        let time = 3000,
+            currentImageWeb = 0,
+            images = document.querySelectorAll(".sliders img")
+        max = images.length;
+
+        function nextImage() {
+            images[currentImageWeb].classList.remove("selected")
+
+            currentImageWeb++
+
+            if (currentImageWeb >= max)
+                currentImageWeb = 0
+
+            images[currentImageWeb].classList.add("selected")
+        }
+        function startImage() {
+            setInterval(() => {
+                //Troca Imagem
+                nextImage();
+            }, time)
+        }
+        window.addEventListener("load", startImage)
     </script>
 </body>
 </html>
