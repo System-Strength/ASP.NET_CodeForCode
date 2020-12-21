@@ -135,6 +135,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,6 +184,7 @@
     <Content Include="fonts\Home_Cliente\pepsi_home.png" />
     <Content Include="fonts\Home_Func\macchiato_home.png" />
     <Content Include="fonts\Home_Func\pepsi_home.png" />
+    <Content Include="fonts\Home_Login\logo.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Js\alertify.js" />
@@ -259,6 +261,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Cliente\Home.cshtml" />
     <Content Include="Views\Funcionario\Home.cshtml" />
+    <Content Include="Views\Login\Login_Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
