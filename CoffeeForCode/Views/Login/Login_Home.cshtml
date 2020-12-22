@@ -4,13 +4,98 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login_Home</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #fff6e5;
+        }
+        header{
+            display: block;
+            text-align: center;
+        }
+        section{
+            margin-left: 14%;
+            margin-bottom: 0%;
+            display: flex;
+        }
+        h3 {
+            font: normal 16pt comic Sans MS;
+            text-transform: uppercase;
+            color: #b09081;
+        }
+        .first_main, .second_main{
+            text-align: center;
+            margin: 3% 5%;
+            height: 8vh;
+        }
+        main{
+            height: 50vh;
+        }
+        .user, .senha {
+            display: block;
+            padding: 15px;
+            width: 20vw;
+            border-radius: 5px;
+            border: solid 4px #FFD500;
+            margin-top: 15%;
+            outline: none;
+        }
+        input::placeholder{
+            font: italic 12pt Comic Sans MS;
+        }
+        .btn_login {
+            background-color: #B35149;
+            padding: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            text-decoration: none;
+            border-radius: 25px;
+            color: #fff;
+            font: normal 12pt Candara; 
+        }
+        .link {
+            
+            margin: 1% 2%;
+            color: #5E3F34;
+            font: normal 15pt Candara;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <img src="~/fonts/Home_Login/logo_copo.png" style="width: 6%; padding-top: 1%;"/>
+        <span class="title" style="color: #5E3F34; font: bold 20pt Berlin Sans FB; display: block; text-transform: uppercase; padding-top: 1%;">CoffeeForCode</span>
+    </header>
+    <section>
+        <div class="first_main">
+            <h3>ENTRE COMO CLIENTE</h3>
+            <main>
+                <input type="text" class="user" placeholder="Nome de Usuário" />
+                <input type="password" class="senha" placeholder="Senha" />
+                <div style="margin-top: 15%;">@Html.ActionLink("ENTRAR COMO CLIENTE", "Home", "Cliente", null, new { @class="btn_login"})</div>
+            </main>
+        </div>
+        <hr style="width: 0.5vw; height: 55vh; background-color: #B0E5F3; border: none; margin: 4% 5.5%;">
+        <div class="second_main">
+            <h3>ENTRE COMO FUNCIONÁRIO</h3>
+            <main>
+                <input type="text" class="user" placeholder="Nome de Usuário" />
+                <input type="password" class="senha" placeholder="Senha" />
+                <div style="margin-top: 15%;">
+                @Html.ActionLink("ENTRAR COMO FUNCIONÁRIO", "Home", "Funcionario", null,  new { @class = "btn_login" })
+                </div>
+            </main>
+        </div>
+    </section>
+    <footer style="text-align: center; margin-left: 4%;">
+        <div style="text-align: center;">
+            @Html.ActionLink("Criar Conta.", "criar_Conta", "Login", null,  new { @class="link"})
+            @Html.ActionLink("Esqueceu a senha?", "Esqueceu_senha", "Login", null, new { @class="link"})
+        </div>
+    </footer>
 </body>
 </html>
