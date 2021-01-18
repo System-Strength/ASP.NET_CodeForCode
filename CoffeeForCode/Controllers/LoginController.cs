@@ -13,5 +13,9 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        public ActionResult CriaConta()
+        {
+            return View();
+        }
     }
 }
