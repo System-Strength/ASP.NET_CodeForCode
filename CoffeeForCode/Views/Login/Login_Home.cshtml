@@ -8,33 +8,40 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login_Home</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Func/logo_copo.png" type="image/png">
     <style>
         body {
             margin: 0;
             background-color: #fff6e5;
         }
-        header{
+
+        header {
             display: block;
             text-align: center;
         }
-        section{
+
+        section {
             margin-left: 14%;
             margin-bottom: 0%;
             display: flex;
         }
+
         h3 {
             font: normal 16pt comic Sans MS;
             text-transform: uppercase;
             color: #b09081;
         }
-        .first_main, .second_main{
+
+        .first_main, .second_main {
             text-align: center;
             margin: 3% 5%;
             height: 8vh;
         }
-        main{
+
+        main {
             height: 50vh;
         }
+
         .user, .senha {
             display: block;
             padding: 15px;
@@ -44,9 +51,11 @@
             margin-top: 15%;
             outline: none;
         }
-        input::placeholder{
+
+        input::placeholder {
             font: italic 12pt Comic Sans MS;
         }
+
         .btn_login {
             display: flex;
             background-color: #B35149;
@@ -56,10 +65,10 @@
             text-decoration: none;
             border-radius: 25px;
             color: #fff;
-            font: normal 12pt Candara; 
+            font: normal 12pt Candara;
         }
+
         .link {
-            
             margin: 1% 2%;
             color: #5E3F34;
             font: normal 15pt Candara;
@@ -94,7 +103,7 @@
     </section>
     <footer style="text-align: center; margin-left: 4%;">
         <div style="text-align: center;">
-            @Html.ActionLink("Criar Conta.", "criar_Conta", "Login", null,  new { @class="link"})
+            @Html.ActionLink("Criar Conta.", "Cria_Conta", "Login", null,  new { @class="link"})
             @Html.ActionLink("Esqueceu a senha?", "Esqueceu_senha", "Login", null, new { @class="link"})
         </div>
     </footer>

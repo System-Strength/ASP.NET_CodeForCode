@@ -1,0 +1,6 @@
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\bin\Debug\AppBancoDominio.dll
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\bin\Debug\AppBancoDominio.pdb
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.csprojAssemblyReference.cache
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.dll
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.pdb

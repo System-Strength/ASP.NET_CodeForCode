@@ -188,6 +188,7 @@
     <Content Include="fonts\Home_Func\pepsi_home.png" />
     <Content Include="fonts\Home_Login\logo.png" />
     <Content Include="fonts\Home_Login\logo_copo.png" />
+    <Content Include="fonts\Home_Login\voltar.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Js\alertify.js" />
@@ -265,7 +266,7 @@
     <Content Include="Views\Cliente\Home.cshtml" />
     <Content Include="Views\Funcionario\Home.cshtml" />
     <Content Include="Views\Login\Login_Home.cshtml" />
-    <Content Include="Views\Login\CriaConta.cshtml" />
+    <Content Include="Views\Login\Cria_Conta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

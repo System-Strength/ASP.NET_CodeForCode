@@ -23,7 +23,7 @@ namespace AppBancoDLL
             var stratualiza = "";
             stratualiza += "update tbl_conta set ";
             stratualiza += string.Format(" user_login = '{0}', ", conta.user_login);
-            stratualiza += string.Format(" rg_usu = '{0}', ", conta.rg_usu.ToString().Replace(".", string.Empty).Replace("-", string.Empty)););
+            stratualiza += string.Format(" rg_usu = '{0}', ", conta.rg_usu.ToString().Replace(".", string.Empty).Replace("-", string.Empty));
             stratualiza += string.Format(" senha_login = '{0}', ", conta.senha_login);
 
             using (db = new Banco())
@@ -86,5 +86,4 @@ namespace AppBancoDLL
             return contas;
         }
     }
-}
 }
