@@ -265,6 +265,7 @@
     <Content Include="Views\Cliente\Home.cshtml" />
     <Content Include="Views\Funcionario\Home.cshtml" />
     <Content Include="Views\Login\Login_Home.cshtml" />
+    <Content Include="Views\Login\CriaConta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,6 +10,9 @@ namespace AppBancoDominio
 {
     public class Conta
     {
+        [DisplayName("ID do Usuário:")]
+        public int id_usu { get; set; }
+
         [DisplayName("Nome de Usúario")]
         [Required(ErrorMessage = "Obrigatório digitar o Nome de Usuário!")]
         public string user_login { get; set; }

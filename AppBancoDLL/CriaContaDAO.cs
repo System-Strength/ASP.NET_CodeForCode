@@ -11,8 +11,8 @@ namespace AppBancoDLL
         private Banco db;
         public void Insert(Conta conta)
         {
-            string strQuery = string.Format("Insert into tbl_conta(user_login, senha_login)" +
-                    "values('{0}', '{1}');", conta.user_login, conta.senha_login); ;
+            string strQuery = string.Format("Insert into tbl_conta(user_login, rg_usu, senha_login)" +
+                    "values('{0}', '{1}', '{2}');", conta.user_login, conta.rg_usu.Replace(".", string.Empty).Replace("-", string.Empty), conta.senha_login); ;
             using (db = new Banco())
             {
                 db.ExecutaComando(strQuery);
@@ -23,7 +23,8 @@ namespace AppBancoDLL
             var stratualiza = "";
             stratualiza += "update tbl_conta set ";
             stratualiza += string.Format(" user_login = '{0}', ", conta.user_login);
-            stratualiza += string.Format(" senha_login = '{1}', ", conta.senha_login);
+            stratualiza += string.Format(" rg_usu = '{0}', ", conta.rg_usu.ToString().Replace(".", string.Empty).Replace("-", string.Empty)););
+            stratualiza += string.Format(" senha_login = '{0}', ", conta.senha_login);
 
             using (db = new Banco())
             {
@@ -35,7 +36,7 @@ namespace AppBancoDLL
         {
             var stratualiza = "";
             stratualiza += "delete from tbl_conta";
-            stratualiza += string.Format(" Where senha_login = {0};", conta.senha_login);
+            stratualiza += string.Format(" Where id_usu = {0};", conta.id_usu);
             using (db = new Banco())
             {
                 db.ExecutaComando(stratualiza);
@@ -43,7 +44,7 @@ namespace AppBancoDLL
         }
         public void Salvar(Conta conta)
         {
-            if (conta.senha_login != "")
+            if (conta.id_usu > 0)
             {
                 Atualizar(conta);
             }
@@ -63,7 +64,7 @@ namespace AppBancoDLL
         {
             using (db = new Banco())
             {
-                var strQuery = string.Format("select * from tbl_login where senha_login = {0} ", id);
+                var strQuery = string.Format("select * from tbl_conta where id_usu = {0} ", id);
                 var retorno = db.retornaComando(strQuery);
                 return listaConta(retorno).FirstOrDefault();
             }
@@ -75,7 +76,9 @@ namespace AppBancoDLL
             {
                 var TempConta = new Conta()
                 {
+                    id_usu = int.Parse(retorno["id_usu"].ToString()),
                     user_login = retorno["user_login"].ToString(),
+                    rg_usu = retorno["rg_usu"].ToString().Replace(".", string.Empty).Replace("-", string.Empty),
                     senha_login = retorno["senha_login"].ToString(),
                 };
                 contas.Add(TempConta);
