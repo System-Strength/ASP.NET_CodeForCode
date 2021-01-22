@@ -25,27 +25,24 @@ namespace CoffeeForCode.Controllers
             }
             return View(conta);
         }
-        public ActionResult Esqueceu_Senha(int id)
+        public ActionResult Esqueceu_Senha()
         {
-            var metodoUsuario = new CriaContaDAO();
-            var usuarios = metodoUsuario.ListarId(id);
-            if(usuarios == null)
-            {
-                return HttpNotFound();
-            }
-            return View(usuarios);
+            return View();
         }
         [HttpPost]
         public ActionResult Esqueceu_Senha(Conta conta)
         {
-            if (ModelState.IsValid)
+            var metodoUsuario = new CriaContaDAO();
+            if(conta.rg_usu == null)
             {
-                var metodoUsuario = new CriaContaDAO();
+                return HttpNotFound();
+            }
+            else if (ModelState.IsValid)
+            {
                 metodoUsuario.Atualizar(conta);
                 return RedirectToAction("Login_Home");
             }
             return View(conta);
         }
-
     }
 }
