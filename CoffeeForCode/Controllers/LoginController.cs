@@ -33,11 +33,7 @@ namespace CoffeeForCode.Controllers
         public ActionResult Esqueceu_Senha(Conta conta)
         {
             var metodoUsuario = new CriaContaDAO();
-            if(conta.rg_usu == null)
-            {
-                return HttpNotFound();
-            }
-            else if (ModelState.IsValid)
+            if (ModelState.IsValid && conta.rg_usu == "59.437.356-6")
             {
                 metodoUsuario.Atualizar(conta);
                 return RedirectToAction("Login_Home");
