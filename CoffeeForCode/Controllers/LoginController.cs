@@ -1,9 +1,5 @@
 ﻿using AppBancoDLL;
 using AppBancoDominio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CoffeeForCode.Controllers
@@ -29,5 +25,27 @@ namespace CoffeeForCode.Controllers
             }
             return View(conta);
         }
+        public ActionResult Esqueceu_Senha(int id)
+        {
+            var metodoUsuario = new CriaContaDAO();
+            var usuarios = metodoUsuario.ListarId(id);
+            if(usuarios == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuarios);
+        }
+        [HttpPost]
+        public ActionResult Esqueceu_Senha(Conta conta)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoUsuario = new CriaContaDAO();
+                metodoUsuario.Atualizar(conta);
+                return RedirectToAction("Login_Home");
+            }
+            return View(conta);
+        }
+
     }
 }
