@@ -11,6 +11,22 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Login_Home(Conta conta)
+        {
+            if (ModelState.IsValid)
+            {
+                if((conta.user_login == "FuncCFC2021") && (conta.senha_login == "FuncDS2021"))
+                {
+                    return RedirectToAction("Home");
+                }
+                else
+                {
+                    return RedirectToAction("Cria_Conta");
+                }               
+            }
+            return View(conta);
+        }
         public ActionResult Cria_Conta()
         {
             return View();
