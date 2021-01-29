@@ -265,9 +265,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Cliente\Home.cshtml" />
     <Content Include="Views\Funcionario\Home.cshtml" />
-    <Content Include="Views\Login\Login_Home.cshtml" />
     <Content Include="Views\Login\Cria_Conta.cshtml" />
     <Content Include="Views\Login\Esqueceu_Senha.cshtml" />
+    <Content Include="Views\Login\Login_Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

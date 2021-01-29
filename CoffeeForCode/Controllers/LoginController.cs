@@ -14,17 +14,16 @@ namespace CoffeeForCode.Controllers
         [HttpPost]
         public ActionResult Login_Home(Conta conta)
         {
-            if (ModelState.IsValid)
+            if(conta.user_login == "FuncCFC2021" && conta.senha_login == "FuncDS2021")
             {
-                if((conta.user_login == "FuncCFC2021") && (conta.senha_login == "FuncDS2021"))
-                {
-                    return RedirectToAction("Home");
-                }
-                else
-                {
-                    return RedirectToAction("Cria_Conta");
-                }               
+                var metodoLogin = new LoginDAO();
+                return RedirectToAction("Home", "Funcionario");
             }
+            else
+            {
+                ModelState.AddModelError("senha_login", "Usuário ou Senha inválidos!");
+            }               
+
             return View(conta);
         }
         public ActionResult Cria_Conta()

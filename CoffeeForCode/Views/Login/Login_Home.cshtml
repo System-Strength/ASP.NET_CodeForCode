@@ -32,15 +32,18 @@
             margin-bottom: 0%;
             display: flex;
         }
-        .form{
+
+        .form {
             display: flex;
         }
+
         h3 {
             font: normal 16pt comic Sans MS;
             text-transform: uppercase;
             color: #b09081;
         }
-        .main{
+
+        .main {
             padding-top: 10px;
         }
 
@@ -51,7 +54,7 @@
             width: 30vw;
         }
 
-        
+
         .user, .senha {
             display: block;
             padding: 15px;
@@ -72,7 +75,7 @@
             margin: 0% 10%;
             display: flex;
             padding: 10px;
-            justify-content:center;
+            justify-content: center;
             background-color: #B35149;
             text-align: center;
             text-decoration: none;
@@ -81,13 +84,15 @@
             color: #fff;
             font: normal 12pt Candara;
         }
+
         .text-danger {
-            transition:ease 2s;
+            transition: ease 2s;
             margin: 3%;
             display: inline-flex;
             color: #5E3F34;
             font: bold 12pt Comic Sans MS;
         }
+
         .link {
             margin: 1% 2%;
             color: #5E3F34;
@@ -104,20 +109,21 @@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-        <div class="first_main">
-            <h3>ENTRE COMO CLIENTE</h3>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="main">
-                @Html.EditorFor(model => model.user_login, new { htmlAttributes = new { @placeholder = "Nome de usuário", @class = "user" } })
-                @Html.ValidationMessageFor(model => model.user_login, "", new { @class = "text-danger" })
-                @Html.PasswordFor(model => model.senha_login, new { @placeholder = "Senha", @class = "senha" } )
-                @Html.ValidationMessageFor(model => model.senha_login, "", new { @class = "text-danger" })
+            <div class="first_main">
+                <h3>ENTRE COMO CLIENTE</h3>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="main">
+                    @Html.EditorFor(model => model.user_login, new { htmlAttributes = new { @placeholder = "Nome de usuário", @class = "user" } })
+                    @Html.ValidationMessageFor(model => model.user_login, "", new { @class = "text-danger" })
+                    @Html.PasswordFor(model => model.senha_login, new { @placeholder = "Senha", @class = "senha" })
+                    @Html.ValidationMessageFor(model => model.senha_login, "", new { @class = "text-danger" })
+                </div>
+                <button class="btn_login">ENTRAR COM CLIENTE</button>
             </div>
-            <button class="btn_login">ENTRAR COM CLIENTE</button>
-        </div>
         }
 
         <hr style="width: 0.5vw; height: 55vh; background-color: #B0E5F3; border: none; margin:4.5%;">
+        
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
@@ -130,7 +136,7 @@
                     @Html.EditorFor(model => model.senha_login, new { htmlAttributes = new { @placeholder = "Senha", @class = "senha" } })
                     @Html.ValidationMessageFor(model => model.senha_login, "", new { @class = "text-danger" })
                 </div>
-                <input type="submit" class="btn_login" value="ENTRAR COMO FUNCIONÁRIO"/>
+                <input type="submit" class="btn_login" id="btn_Func" value="ENTRAR COMO FUNCIONÁRIO" />
             </div>
         }
     </section>
