@@ -1,6 +1,8 @@
-﻿using AppBancoDLL;
+﻿using AppBancoADO;
+using AppBancoDLL;
 using AppBancoDominio;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace CoffeeForCode.Controllers
@@ -15,10 +17,19 @@ namespace CoffeeForCode.Controllers
         [HttpPost]
         public ActionResult Login_Home(Conta conta)
         {
+            var db = new Banco();
+            var strQuery = "select user_login, senha_login from tbl_conta";
+            var retorno = db.retornaComando(strQuery);
+
+
             if (conta.user_login == "FuncCFC2021" && conta.senha_login == "FuncDS2021")
             {
                 var metodoLogin = new LoginDAO();
                 return RedirectToAction("Home", "Funcionario");
+            }
+            else if (retorno.Read())
+            {
+                return RedirectToAction("Home", "Cliente");
             }
             else
             {

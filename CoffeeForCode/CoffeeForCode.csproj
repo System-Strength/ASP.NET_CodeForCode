@@ -287,6 +287,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AppBancoADO\AppBancoADO.csproj">
+      <Project>{79F0DFD5-C75B-4C6C-BA48-903397AFCC85}</Project>
+      <Name>AppBancoADO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AppBancoDLL\AppBancoDLL.csproj">
       <Project>{b813702d-3b50-4d9e-b0f0-7ba2f10c1490}</Project>
       <Name>AppBancoDLL</Name>

@@ -69,7 +69,7 @@ namespace AppBancoDLL
                 return listaConta(retorno).FirstOrDefault();
             }
         }
-        private List<Conta> listaConta(MySqlDataReader retorno)
+        public List<Conta> listaConta(MySqlDataReader retorno)
         {
             var contas = new List<Conta>();
             while (retorno.Read())
