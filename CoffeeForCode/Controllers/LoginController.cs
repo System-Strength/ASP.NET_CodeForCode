@@ -4,13 +4,14 @@ using AppBancoDominio;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Web.Mvc;
 
 namespace CoffeeForCode.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
+        //    // GET: Login
         public ActionResult Login_Home()
         {
             return View();
@@ -20,23 +21,27 @@ namespace CoffeeForCode.Controllers
         {
             
             var db = new Banco();
-            var strQuery = "select user_login, senha_login from tbl_conta";
+            var strQuery = "select * from tbl_conta";
             var retorno = db.retornaComando(strQuery);
-
-            if (conta.user_login == "FuncCFC2021" && conta.senha_login == "FuncDS2021")
+            while (retorno.Read())
             {
-                var metodoLogin = new LoginDAO();
-                return RedirectToAction("Home", "Funcionario");
+                var user_login = retorno["user_login"].ToString();
+                var senha_login = retorno["senha_login"].ToString();
+            
+                if (conta.user_login == "FuncCFC2021" && conta.senha_login == "FuncDS2021")
+                {
+                    var metodoLogin = new LoginDAO();
+                    return RedirectToAction("Home", "Funcionario");
+                }
+                else if (user_login == conta.user_login && senha_login == conta.senha_login)
+                {
+                    return RedirectToAction("Home", "Cliente");
+                }
+                else
+                {
+                    ModelState.AddModelError("senha_login", "Usuário ou Senha inválidos!");
+                }
             }
-            else if (conta.user_login == strQuery)
-            {
-                return RedirectToAction("Home", "Cliente");
-            }
-            else
-            {
-                ModelState.AddModelError("senha_login", "Usuário ou Senha inválidos!");
-            }               
-
             return View(conta);
         }
         public ActionResult Cria_Conta()
