@@ -31,7 +31,6 @@ namespace AppBancoDLL
                 db.ExecutaComando(stratualiza);
             }
         }
-
         public void Excluir(Conta conta)
         {
             var stratualiza = "";

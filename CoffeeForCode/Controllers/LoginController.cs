@@ -18,8 +18,7 @@ namespace CoffeeForCode.Controllers
         }
         [HttpPost]
         public ActionResult Login_Home(Conta conta)
-        {
-            
+        {           
             var db = new Banco();
             var strQuery = "select * from tbl_conta";
             var retorno = db.retornaComando(strQuery);
@@ -55,6 +54,7 @@ namespace CoffeeForCode.Controllers
             {
                 var metodoUsuario = new CriaContaDAO();
                 metodoUsuario.Insert(conta);
+                return RedirectToAction("Home", "Cliente");
             }
             return View(conta);
         }
@@ -66,11 +66,18 @@ namespace CoffeeForCode.Controllers
         public ActionResult Esqueceu_Senha(Conta conta)
         {
             var metodoUsuario = new CriaContaDAO();
-            if (ModelState.IsValid && conta.rg_usu == "59.437.356-6")
+            var db = new Banco();
+            var strQuery = "select * from tbl_conta";
+            var retorno = db.retornaComando(strQuery);
+            while (retorno.Read())
             {
-                metodoUsuario.Atualizar(conta);
-                return RedirectToAction("Login_Home");
-            }
+                var rg_usu = retorno["rg_usu"].ToString().Replace(".", string.Empty).Replace("-", string.Empty);
+                if (rg_usu == conta.rg_usu)
+                {
+                    metodoUsuario.Atualizar(conta);
+                    return RedirectToAction("Login_Home", "Login");
+                }
+            }                                    
             return View(conta);
         }
     }
