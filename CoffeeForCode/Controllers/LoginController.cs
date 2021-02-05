@@ -1,10 +1,6 @@
 ﻿using AppBancoADO;
 using AppBancoDLL;
 using AppBancoDominio;
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Web.Mvc;
 
 namespace CoffeeForCode.Controllers
