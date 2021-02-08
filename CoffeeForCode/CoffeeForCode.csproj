@@ -173,6 +173,13 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\Home_Cliente\burguer_home.png" />
     <Content Include="fonts\Home_Cliente\cafe_home.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\burger.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\chocolate.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\coffee.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\cookies.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\milkshake.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\sandwich.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\voltar.png" />
     <Content Include="fonts\Home_Cliente\cookie_home.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\Home_Cliente\logo.png" />
@@ -269,6 +276,7 @@
     <Content Include="Views\Login\Esqueceu_Senha.cshtml" />
     <Content Include="Views\Login\Login_Home.cshtml" />
     <Content Include="Views\Cliente\Sobre.cshtml" />
+    <Content Include="Views\Cliente\Cardapio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

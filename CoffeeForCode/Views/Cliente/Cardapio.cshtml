@@ -1,0 +1,155 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cardápio - CoffeeForCode</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
+    <style>
+        body {
+            margin: 0;
+        }
+        header{
+            display: inline-flex;
+        }
+        nav {
+            background-color: #fff6e5;
+            display: flex;
+            width: 100vw;
+        }
+
+        .logo {
+            margin-left: 8%;
+            width: 6vw;
+            height: 12vh;
+        }
+
+        #loc {
+            background-color: #9f4845;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            width: 90%;
+            margin: 2%;
+        }
+
+        li a {
+            font: bold 12pt comic Sans MS;
+            text-decoration: none;
+            color: #707070;
+            display: flex;
+            padding: 6px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            list-style: none;
+            margin-left: 10vw;
+        }
+
+            li a:hover {
+                background-color: #9f4845;
+                color: white;
+                transition: 0.5s;
+            }
+            section{
+                margin: 2% 5%;
+                height: 77vh;
+                display: flex;
+            }
+            h2{
+                font: bold 18pt Comic Sans MS;
+                color: #b78278;
+                margin-left: 5%;
+            }
+            main{
+                padding-left: 80px;
+                display: inline-block;
+            }
+            .col_one, .col_two{
+                display: flex;
+            }
+        .box {
+            padding: 9px 10px;
+            margin: 2% 5%;
+            height: 20vh;
+            width: 25vw;
+            background-color: white;
+            display: inline-block;
+            border: solid 5px #fff6e5;
+            border-radius: 20px;
+            transition: 0.5s;
+            box-shadow: 0 15px 15px rgba(0, 0, 0, .5);
+            cursor: pointer;
+        }
+            .box:hover {
+                border: solid 5px #9f4845;
+            }
+            .box img{ 
+                padding-top: 12px;
+                padding-left: 80px;
+                width: 5vw;
+                height: 10vh;
+            }
+            .box h3{
+                position:relative;
+                margin-bottom: 15px;
+                text-align: center;
+                font: bold 18pt Candara;
+                color: #9f4845;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="~/fonts/Home_Cliente/logo_copo.png" class="logo" alt="">
+            <ul>
+                <li><a href="Home" id="">Home</a></li>
+                <li><a href="Cardapio" id="loc">Cardápio</a></li>
+                <li><a href="">Seja parceiro</a></li>
+                <li><a href="">Trabalhe conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <main>
+            <h2>Categorias</h2>
+            <div class="col_one">
+                <div class="box">
+                    <img src="~/fonts/Home_Cliente/Cardapio/coffee.png"/>
+                    <h3>Café</h3>    
+                </div>
+                <div class="box">
+                    <img src="~/fonts/Home_Cliente/Cardapio/chocolate.png" />
+                    <h3>Chocolate</h3>
+                </div>
+                <div class="box">
+                    <img src="~/fonts/Home_Cliente/Cardapio/milkshake.png" />
+                    <h3>MilkShake</h3>
+                </div>
+            </div>
+            <div class="col_two">
+                <div class="box">
+                    <img src="~/fonts/Home_Cliente/Cardapio/sandwich.png" />
+                    <h3>Sanduíche</h3>
+                </div>
+                <div class="box">
+                    <img src="~/fonts/Home_Cliente/Cardapio/cookies.png" />
+                    <h3>Doces</h3>
+                </div>
+                <div class="box">
+                    <img src="~/fonts/Home_Cliente/Cardapio/burger.png"/>
+                    <h3>Hambúrguer</h3>
+                </div>
+            </div>
+        </main>
+    </section>
+        
+        
+</body>
+</html>
