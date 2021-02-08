@@ -12,6 +12,10 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        public ActionResult Sobre()
+        {
+            return View();
+        }
         public ActionResult Cardapio()
         {
             return View();

@@ -268,6 +268,7 @@
     <Content Include="Views\Login\Cria_Conta.cshtml" />
     <Content Include="Views\Login\Esqueceu_Senha.cshtml" />
     <Content Include="Views\Login\Login_Home.cshtml" />
+    <Content Include="Views\Cliente\Sobre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
