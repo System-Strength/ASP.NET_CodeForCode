@@ -73,11 +73,13 @@
             .col_one, .col_two{
                 display: flex;
             }
-        .box {
-            padding: 9px 10px;
+        .container_box {
             margin: 2% 5%;
+        }
+        .box{
+            padding: 9px 10px;
             height: 20vh;
-            width: 25vw;
+            width: 18vw;
             background-color: white;
             display: inline-block;
             border: solid 5px #fff6e5;
@@ -91,7 +93,7 @@
             }
             .box img{ 
                 padding-top: 12px;
-                padding-left: 80px;
+                padding-left: 85px;
                 width: 5vw;
                 height: 10vh;
             }
@@ -120,36 +122,40 @@
         <main>
             <h2>Categorias</h2>
             <div class="col_one">
-                <div class="box">
+                <a href="" class="container_box"><div class="box">
                     <img src="~/fonts/Home_Cliente/Cardapio/coffee.png"/>
                     <h3>Café</h3>    
-                </div>
-                <div class="box">
+                </div></a>
+                <a href="" class="container_box"><div class="box">
                     <img src="~/fonts/Home_Cliente/Cardapio/chocolate.png" />
                     <h3>Chocolate</h3>
-                </div>
-                <div class="box">
+                </div></a>
+                <a href="" class="container_box"><div class="box">
                     <img src="~/fonts/Home_Cliente/Cardapio/milkshake.png" />
                     <h3>MilkShake</h3>
-                </div>
+                </div></a>
             </div>
             <div class="col_two">
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/sandwich.png" />
-                    <h3>Sanduíche</h3>
-                </div>
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/cookies.png" />
-                    <h3>Doces</h3>
-                </div>
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/burger.png"/>
-                    <h3>Hambúrguer</h3>
-                </div>
-            </div>
+                <a href="" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/sandwich.png" />
+                        <h3>Sanduíche</h3>
+                    </div>
+                </a>
+                <a href="" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/cookies.png" />
+                        <h3>Doces</h3>
+                    </div>
+                </a>
+                <a href="" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/burger.png" />
+                        <h3>Hambúrguer</h3>
+                    </div>
+                </a>
+        </div>
         </main>
     </section>
-        
-        
 </body>
 </html>
