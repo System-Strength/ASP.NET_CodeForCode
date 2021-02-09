@@ -1,0 +1,158 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MilkShake - CoffeeForCode</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header, .back, .tit {
+            display: inline-flex;
+        }
+
+        nav {
+            background-color: #fff6e5;
+            display: flex;
+            width: 100vw;
+        }
+
+        .logo {
+            margin-left: 8%;
+            width: 6vw;
+            height: 12vh;
+        }
+
+        #loc {
+            background-color: #9f4845;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            width: 90%;
+            margin: 2%;
+        }
+
+        li a {
+            font: bold 12pt comic Sans MS;
+            text-decoration: none;
+            color: #707070;
+            display: flex;
+            padding: 6px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            list-style: none;
+            margin-left: 10vw;
+        }
+
+            li a:hover {
+                background-color: #9f4845;
+                color: white;
+                transition: 0.5s;
+            }
+
+        section {
+            margin: 1%;
+        }
+
+        .back img {
+            width: 2vw;
+            height: 2vw;
+            margin: 25% 10%;
+        }
+
+        .back h3 {
+            display: flex;
+            color: #9f4845;
+            font: bold 15pt Comic Sans MS;
+        }
+
+        .tit {
+            display: inline-flex;
+            margin-left: 40%;
+        }
+
+            .tit h2 {
+                font: bold 18pt Comic Sans MS;
+                color: #6b4d41;
+            }
+
+        main {
+            display: flex;
+            width: 75vw;
+            height: 70vh;
+            padding-left: 10%;
+        }
+
+        .container, .box {
+            color: white;
+            font: bold 12pt Comic Sans MS;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 5%;
+            width: 25%;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+            .container h2 {
+                margin-bottom: -10%;
+            }
+
+            .container:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 15px rgba(0, 0, 0, .5);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="~/fonts/Home_Cliente/logo_copo.png" class="logo" alt="">
+            <ul>
+                <li><a href="Home" id="">Home</a></li>
+                <li><a href="Cardapio" id="loc">Cardápio</a></li>
+                <li><a href="">Seja parceiro</a></li>
+                <li><a href="">Trabalhe conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <a href="Cardapio" style="text-decoration: none;">
+            <div class="back">
+                <img src="~/fonts/Home_Login/voltar.png"><h3>Voltar</h3>
+            </div>
+        </a>
+        <div class="tit"><h2>MilkShakes</h2></div>
+        <main>
+            <a href="" class="container" style=" background-image: url(/fonts/Home_Cliente/Cardapio/MilkShake/Chocolate.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+                <div class="box" style="background: none; width:50%;">
+                    <h2>Chocolate</h2>
+                    <h3>R$ 7,00</h3>
+                </div>
+            </a>
+            <a href="" class="container" style=" background-image: url(/fonts/Home_Cliente/Cardapio/MilkShake/Chocolate_Branco.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+                <div class="box" style="background: none; width:50%;">
+                    <h2>Baunilha</h2>
+                    <h3>R$ 7,00</h3>
+                </div>
+            </a>
+            <a href="" class="container" style=" background-image: url(/fonts/Home_Cliente/Cardapio/MilkShake/Morango.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+                <div class="box" style="background: none; width:50%;">
+                    <h2>Morango</h2>
+                    <h3>R$ 7,00</h3>
+                </div>
+            </a>
+        </main>
+    </section>
+</body>
+</html>

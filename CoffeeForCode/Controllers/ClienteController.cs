@@ -28,6 +28,10 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        public ActionResult Cardapio_MilkShake()
+        {
+            return View();
+        }
         public ActionResult Parceiro()
         {
             return View();
