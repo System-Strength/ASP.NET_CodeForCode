@@ -24,6 +24,10 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        public ActionResult Cardapio_Choco()
+        {
+            return View();
+        }
         public ActionResult Parceiro()
         {
             return View();
