@@ -183,6 +183,9 @@
     <Content Include="fonts\Home_Cliente\Cardapio\Choco\quente.jpg" />
     <Content Include="fonts\Home_Cliente\Cardapio\coffee.png" />
     <Content Include="fonts\Home_Cliente\Cardapio\cookies.png" />
+    <Content Include="fonts\Home_Cliente\Cardapio\Doces\bolinho.jpeg" />
+    <Content Include="fonts\Home_Cliente\Cardapio\Doces\cookies.jpeg" />
+    <Content Include="fonts\Home_Cliente\Cardapio\Doces\rosquinha.jpeg" />
     <Content Include="fonts\Home_Cliente\Cardapio\milkshake.png" />
     <Content Include="fonts\Home_Cliente\Cardapio\MilkShake\Chocolate.jpeg" />
     <Content Include="fonts\Home_Cliente\Cardapio\MilkShake\Chocolate_Branco.jpeg" />
@@ -293,6 +296,7 @@
     <Content Include="Views\Cliente\Cardapio_Choco.cshtml" />
     <Content Include="Views\Cliente\Cardapio_MilkShake.cshtml" />
     <Content Include="Views\Cliente\Cardapio_Sanduiche.cshtml" />
+    <Content Include="Views\Cliente\Cardapio_Doces.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

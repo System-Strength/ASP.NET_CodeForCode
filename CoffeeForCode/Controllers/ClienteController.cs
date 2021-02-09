@@ -36,6 +36,14 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        public ActionResult Cardapio_Doces()
+        {
+            return View();
+        }
+        public ActionResult Cardapio_Burguer()
+        {
+            return View();
+        }
         public ActionResult Parceiro()
         {
             return View();
