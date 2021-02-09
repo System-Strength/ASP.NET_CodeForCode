@@ -57,10 +57,13 @@
             color: white;
             transition: 0.5s;
         }
+        section{
+            margin: 1%;
+        }
         .back img {
-            width: 2.5vw;
-            height: 2.5vw;
-            margin: 10% 10%;
+            width: 2vw;
+            height: 2vw;
+            margin: 25% 10%;
         }
 
         .back h3 {
@@ -76,7 +79,30 @@
             font: bold 18pt Comic Sans MS;
             color: #6b4d41;
         }
-    </style>
+        main{
+            display: flex;
+            width: 75vw;
+            height:70vh;
+            padding-left: 10%;
+        }
+        .container, .box {
+            color: white;
+            font: bold 12pt Comic Sans MS;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 5%;
+            width: 25%;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .container h2{
+            margin-bottom: -10%;
+        }
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 15px rgba(0, 0, 0, .5);
+        }
+</style>
 </head>
 <body>
     <header>
@@ -92,15 +118,33 @@
        
     </header>
     <section>
-        <a href="Login_Home" style="text-decoration: none;">
+        <a href="Cardapio" style="text-decoration: none;">
             <div class="back">
                 <img src="~/fonts/Home_Login/voltar.png"><h3>Voltar</h3>
             </div>
         </a>
         <div class="tit"><h2>Café</h2></div>
-        <div>
-
-        </div>
+        <main>
+            <a href="" class="container"  style=" background-image: url(/fonts/Home_Cliente/Cardapio/Cafe/expresso.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+                <div class="box" style="background: none; width:50%;">
+                    <h2>Expresso</h2>
+                    <h3>R$ 5,00</h3>
+                </div>
+            </a>
+            <a href="" class="container" style=" background-image: url(/fonts/Home_Cliente/Cardapio/Cafe/Americano.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+                <div class="box" style="background: none; width:50%;">
+                    <h2>Americano</h2>
+                    <h3>R$ 4,00</h3>
+                </div>
+            </a>
+            <a href="" class="container" style=" background-image: url(/fonts/Home_Cliente/Cardapio/Cafe/leite.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+                <div class="box" style="background: none; width:50%;">
+                    <h2>Com Leite</h2>
+                    <h3>R$ 4,50</h3>
+                </div>
+            </a>
+        </main>
+        
     </section>
 </body>
 </html>
