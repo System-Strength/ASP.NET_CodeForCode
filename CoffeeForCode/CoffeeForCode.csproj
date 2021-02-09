@@ -277,6 +277,7 @@
     <Content Include="Views\Login\Login_Home.cshtml" />
     <Content Include="Views\Cliente\Sobre.cshtml" />
     <Content Include="Views\Cliente\Cardapio.cshtml" />
+    <Content Include="Views\Cliente\Cardapio_Cafe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

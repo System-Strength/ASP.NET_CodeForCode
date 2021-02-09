@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Café - CoffeeForCode</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            display: inline-flex;
+        }
+
+        nav {
+            background-color: #fff6e5;
+            display: flex;
+            width: 100vw;
+        }
+
+        .logo {
+            margin-left: 8%;
+            width: 6vw;
+            height: 12vh;
+        }
+
+        #loc {
+            background-color: #9f4845;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            width: 90%;
+            margin: 2%;
+        }
+
+        li a {
+            font: bold 12pt comic Sans MS;
+            text-decoration: none;
+            color: #707070;
+            display: flex;
+            padding: 6px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            list-style: none;
+            margin-left: 10vw;
+        }
+
+            li a:hover {
+                background-color: #9f4845;
+                color: white;
+                transition: 0.5s;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="~/fonts/Home_Cliente/logo_copo.png" class="logo" alt="">
+            <ul>
+                <li><a href="Home" id="">Home</a></li>
+                <li><a href="Cardapio" id="loc">Cardápio</a></li>
+                <li><a href="">Seja parceiro</a></li>
+                <li><a href="">Trabalhe conosco</a></li>
+            </ul>
+        </nav>
+       
+    </header>
+    <section>
+        <a href="Login_Home" style="text-decoration: none;">
+            <div class="back">
+                <img src="~/fonts/Home_Login/voltar.png"><h3>Voltar</h3>
+            </div>
+        </a>
+        <div class="tit"><h2>CAFÉ</h2></div>
+        <div>
+
+        </div>
+    </section>
+</body>
+</html>
