@@ -3,22 +3,82 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Compra</title>
+    <title>Compra - CoffeeForCode</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header, .back, .tit {
+            display: inline-flex;
+        }
+
+        nav {
+            background-color: #fff6e5;
+            display: flex;
+            width: 100vw;
+        }
+
+        .logo {
+            margin-left: 8%;
+            width: 6vw;
+            height: 12vh;
+        }
+
+        #loc {
+            background-color: #9f4845;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            width: 90%;
+            margin: 2%;
+        }
+
+        li a {
+            font: bold 12pt comic Sans MS;
+            text-decoration: none;
+            color: #707070;
+            display: flex;
+            padding: 6px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            list-style: none;
+            margin-left: 10vw;
+        }
+
+            li a:hover {
+                background-color: #9f4845;
+                color: white;
+                transition: 0.5s;
+            }
+    </style>
 </head>
 <body>
-    @using (Html.BeginForm()) 
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>Compras</h4>
-            <hr />
+    <header>
+        <nav>
+            <img src="~/fonts/Home_Cliente/logo_copo.png" class="logo" alt="">
+            <ul>
+                <li><a href="Home" id="">Home</a></li>
+                <li><a href="Cardapio" id="loc">Cardápio</a></li>
+                <li><a href="">Seja parceiro</a></li>
+                <li><a href="">Trabalhe conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <img src="">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <h2>Realizar Compra</h2>
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.cd_compra, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -27,7 +87,7 @@
                     @Html.ValidationMessageFor(model => model.cd_compra, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.cpf_usu, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -35,7 +95,7 @@
                     @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.end_usu, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -43,7 +103,7 @@
                     @Html.ValidationMessageFor(model => model.end_usu, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.numCasa_usu, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -51,7 +111,7 @@
                     @Html.ValidationMessageFor(model => model.numCasa_usu, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.blocoApa_usu, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -59,7 +119,7 @@
                     @Html.ValidationMessageFor(model => model.blocoApa_usu, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.formaPag_usu, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -67,15 +127,16 @@
                     @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
-        </div>
-    }
-    
+        }
+
+
+    </section>
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
