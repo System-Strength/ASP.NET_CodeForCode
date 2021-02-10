@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppBancoDLL;
+using AppBancoDominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -43,6 +45,21 @@ namespace CoffeeForCode.Controllers
         public ActionResult Cardapio_Burguer()
         {
             return View();
+        }
+        public ActionResult Compra()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Compra(Compras compra)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoUsuario = new ComprasDAO();
+                metodoUsuario.Insert(compra);
+                return RedirectToAction("Home", "Cliente");
+            }
+            return View(compra);
         }
         public ActionResult Parceiro()
         {
