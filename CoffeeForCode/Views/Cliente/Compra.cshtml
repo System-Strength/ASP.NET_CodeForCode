@@ -59,6 +59,32 @@
                 color: white;
                 transition: 0.5s;
             }
+
+        main {
+            display: flex;
+            width: 75vw;
+            height: 70vh;
+            padding-left: 10%;
+        }
+
+        .container, .box {
+            color: white;
+            font: bold 12pt Comic Sans MS;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 5%;
+            width: 25%;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+            .container h2 {
+                margin-bottom: -10%;
+            }
+
+        section {
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -74,12 +100,15 @@
         </nav>
     </header>
     <section>
-        <a href="" onclick="Classico()" class="container" style=" background-image: url(/fonts/Home_Cliente/Cardapio/Burguer/Clássico.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
-            <div class="box" style="background: none; width:50%;">
-                <h2>Clássico</h2>
-                <h3>R$ 12,00</h3>
-            </div>
-        </a>
+        <main>
+            <a href="" onclick="Classico()" id="foto" class="container" style="background-image: url(/fonts/Home_Cliente/Cardapio/Burguer/Clássico.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                <div class="box" style="background: none; width:50%;">
+                    <h2 id="nome_prod"></h2>
+                    <h3 id="preco_prod"></h3>
+                </div>
+            </a>
+        </main>
+
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()

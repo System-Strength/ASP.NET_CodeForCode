@@ -9,7 +9,7 @@ using System.Web.Mvc;
 namespace CoffeeForCode.Controllers
 {
     public class ClienteController : Controller    
-    {
+    { 
         public ActionResult Home()
         {
             return View();
