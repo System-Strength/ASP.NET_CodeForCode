@@ -14,10 +14,13 @@
             margin: 0;
         }
 
-        header, .back, .tit {
+        header, .tit {
             display: inline-flex;
         }
-
+        .back{
+            display: inline-flex;
+            cursor: pointer;
+        }
         nav {
             background-color: #fff6e5;
             display: flex;
@@ -60,30 +63,105 @@
                 transition: 0.5s;
             }
 
-        main {
+        .second_main {
             display: flex;
-            width: 75vw;
-            height: 70vh;
-            padding-left: 10%;
+            margin-top: 2%;
+            width: 32vw;
+            height: 72vh;
+            padding-left: 4%;
         }
 
-        .container, .box {
+        .container{
             color: white;
             font: bold 12pt Comic Sans MS;
             text-decoration: none;
             border-radius: 10px;
             margin: 5%;
-            width: 25%;
+            width: 55%;
+            height: 75%;
             transition: 0.5s;
             cursor: pointer;
+            margin-left: 20%;
         }
 
-            .container h2 {
-                margin-bottom: -10%;
-            }
+        .box h2 {
+            margin-bottom: -10%;
+            margin-left: 8%;
+        }
 
         section {
             display: flex;
+        }
+        .back img {
+            width: 2vw;
+            height: 2vw;
+            margin: 30% 15%;
+        }
+
+        .back h4 {
+            display: flex;
+            color: #9f4845;
+            font: bold 15pt Comic Sans MS;
+        }
+        .tit {
+            display: inline-flex;
+            width: 25vw;
+            margin-left: 48%;
+        }
+
+        .tit h2 {
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font: bold 18pt Comic Sans MS;
+            color: #6b4d41;
+        }
+        .subtit {
+            font: normal 15pt comic Sans MS;
+            text-transform: uppercase;
+            color: #b09081;
+            text-align: center;
+        }
+        .campo {
+            display: block;
+            padding: 10px;
+            width: 20vw;
+            border-radius: 5px;
+            border: solid 4px #FFD500;
+            outline: none;
+            margin-left: 5%;
+        }
+
+        input::placeholder {
+            font: italic 12pt Comic Sans MS;
+        }
+
+        .btn_login {
+            cursor: pointer;
+            width: 22vw;
+            margin: 0% 5%;
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            background-color: #B35149;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px;
+            border: none;
+            color: #fff;
+            font: normal 12pt Candara;
+        }
+
+        .text-danger {
+            transition: ease 2s;
+            margin: 3%;
+            display: inline-flex;
+            color: #5E3F34;
+            font: bold 12pt Comic Sans MS;
+        }
+        form{
+            display: block;
+            height: 55vh;
+            margin-top: 2%;
         }
     </style>
 </head>
@@ -99,79 +177,98 @@
             </ul>
         </nav>
     </header>
+    <main class="first_main" style="height: 10vh; width:97vw;margin-top: 0%; ">
+        <a onclick="history.back()" style="text-decoration: none;">
+            <div class="back">
+                <img src="~/fonts/Home_Login/voltar.png"><h4>Voltar</h4>
+            </div>
+        </a>
+        <div class="tit"><h2>Realizar Compra</h2></div>
+
+    </main>
+
     <section>
-        <main>
+        <main class="second_main">
             <a href="" onclick="Classico()" id="foto" class="container" style="background-image: url(/fonts/Home_Cliente/Cardapio/Cafe/expresso.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;">
                 <div class="box" style="background: none; width:50%;">
-                   
+                    <h2>Expresso</h2>
+                    <h2>R$ 5,00</h2>
                 </div>
             </a>
         </main>
 
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            <h2>Realizar Compra</h2>
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.cd_compra, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.cd_compra, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.cd_compra, "", new { @class = "text-danger" })
-                </div>
-            </div>
+        <form>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <h3 class="subtit">ENTREGAR EM SUA CASA</h3>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.cpf_usu, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.cpf_usu, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.end_usu, new { htmlAttributes = new { @placeholder = "Endereço", @class = "campo" } })
+                        @Html.ValidationMessageFor(model => model.end_usu, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.end_usu, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.end_usu, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.end_usu, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.numCasa_usu, new { htmlAttributes = new { @placeholder = "N°", @class = "campo" } })
+                        @Html.ValidationMessageFor(model => model.numCasa_usu, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.numCasa_usu, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.numCasa_usu, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.numCasa_usu, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.blocoApa_usu, new { htmlAttributes = new { @placeholder = "Bloco", @class = "campo" } })
+                        @Html.ValidationMessageFor(model => model.blocoApa_usu, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.blocoApa_usu, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.blocoApa_usu, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.blocoApa_usu, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.formaPag_usu, new { htmlAttributes = new { @placeholder = "Forma de Pagamento", @class = "campo" } })
+                        @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.formaPag_usu, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.formaPag_usu, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
+                <button class="btn_login">COMPRAR</button>
+            }
+            <hr style="width: 0.5vw; height: 55vh; background-color: #B0E5F3; border: none; margin:4%;">
+        </form>
+        <form>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <h3 class="subtit">RETIRAR EM NOSSA LOJA</h3>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cpf_usu, new { htmlAttributes = new { @placeholder = "CPF", @class = "campo" } })
+                        @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <iframe class="campo" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14629.13374852649!2d-46.8086855!3d-23.5582617!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d54688127eff95c!2sPadaria%20P%C3%A3o%20Bom.!5e0!3m2!1spt-BR!2sbr!4v1613140863962!5m2!1spt-BR!2sbr" width="150" height="85" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <br/>
+                    </div>
                 </div>
-            </div>
-        }
 
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.formaPag_usu, new { htmlAttributes = new { @placeholder = "Forma de Pagamento", @class = "campo" } })
+                        @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <button class="btn_login">COMPRAR</button>
+            }
+        </form>
 
     </section>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
 </body>
 </html>
