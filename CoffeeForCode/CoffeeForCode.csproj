@@ -302,6 +302,7 @@
     <Content Include="Views\Cliente\Cardapio_Doces.cshtml" />
     <Content Include="Views\Cliente\Cardapio_Burguer.cshtml" />
     <Content Include="Views\Cliente\Compra.cshtml" />
+    <Content Include="Views\Cliente\Parceiro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
