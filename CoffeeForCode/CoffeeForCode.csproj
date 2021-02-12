@@ -202,6 +202,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\Home_Cliente\logo.png" />
     <Content Include="fonts\Home_Cliente\logo_copo.png" />
+    <Content Include="fonts\Home_Cliente\Parceiro\logo_bauducco.png" />
+    <Content Include="fonts\Home_Cliente\Parceiro\logo_bk.png" />
+    <Content Include="fonts\Home_Cliente\Parceiro\logo_ifood.png" />
+    <Content Include="fonts\Home_Cliente\Parceiro\logo_nestle.png" />
+    <Content Include="fonts\Home_Cliente\Parceiro\logo_starbucks.png" />
+    <Content Include="fonts\Home_Cliente\Parceiro\logo_subway.png" />
     <Content Include="fonts\Home_Func\burguer_home.png" />
     <Content Include="fonts\Home_Func\cafe_home.png" />
     <Content Include="fonts\Home_Func\cookie_home.png" />

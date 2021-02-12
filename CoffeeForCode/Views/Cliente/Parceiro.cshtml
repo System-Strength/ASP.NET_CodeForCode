@@ -101,6 +101,7 @@
             width: 40%;
         }
         .box {
+            display: flex;
             position: relative;
             width: 500px;
             background: #fff;
@@ -114,6 +115,19 @@
             overflow: hidden;
             transition: 0.5s;
             box-shadow: 0 15px 35px rgba(0, 0, 0, .5);  
+        }
+            .box:hover {
+                border: solid 6px #ffeece;
+                transform: translateY(-10px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+            }
+        .column_one, .column_two{
+            height: 50vh;
+        }
+        .column_one img, .column_two img{
+            width: 8vw;
+            margin: 10%;
+            display:block;
         }
     </style>
 </head>
@@ -136,9 +150,18 @@
         </div>
         <div class="second_main">
             <div class="box">
-                <div class="column_one"></div>
-                <hr style="width: 0.5vw; height: 45vh; background-color: #B0E5F3; border: none; margin:4%;">
-                <div class="column_two"></div>
+                <div class="column_one">
+                    <img src="~/fonts/Home_Cliente/Parceiro/logo_starbucks.png" style="width: 8em; margin-top: 18%;">
+                    <img src="~/fonts/Home_Cliente/Parceiro/logo_subway.png" style="width: 8em; margin-top: 35%;">
+                    <img src="~/fonts/Home_Cliente/Parceiro/logo_nestle.png" style="width: 8em; margin-top: 40%">
+                </div>
+                <hr style="width: 0.5vw; display:flex;height: 45vh; background-color: #B0E5F3; border: none; margin:10%;">
+                <div class="column_two">
+                    <img src="~/fonts/Home_Cliente/Parceiro/logo_bauducco.png" style="width: 8em">
+                    <img src="~/fonts/Home_Cliente/Parceiro/logo_bk.png" style="width: 8em">
+                    <img src="~/fonts/Home_Cliente/Parceiro/logo_ifood.png" style="width: 8em">
+
+                </div>
             </div>
         </div>
     </main>
