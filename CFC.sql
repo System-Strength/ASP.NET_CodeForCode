@@ -28,4 +28,4 @@ create table tbl_parceiro(
     redeSocial_parc varchar(40),
     descr_parc varchar(2000)
 );
-select * from tbl_compra;
+select * from tbl_parceiro;

@@ -53,7 +53,7 @@ namespace CoffeeForCode.Controllers
         [HttpPost]
         public ActionResult Compra(Compras compra)
         {
-            if (ModelState.IsValid)
+            if (compra.formaPag_usu != null)
             {
                 var metodoUsuario = new ComprasDAO();
                 metodoUsuario.Insert(compra);
