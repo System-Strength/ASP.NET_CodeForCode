@@ -69,6 +69,17 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult ParceiroForm(Parceiro parceiro)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoParceiro = new ParceiroDAO();
+                metodoParceiro.Insert(parceiro);
+                return RedirectToAction("Home", "Cliente");
+            }
+            return View(parceiro);
+        }
         public ActionResult TrabalheConosco()
         {
             return View();
