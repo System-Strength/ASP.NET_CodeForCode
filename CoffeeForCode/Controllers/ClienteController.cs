@@ -65,6 +65,10 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        public ActionResult ParceiroForm()
+        {
+            return View();
+        }
         public ActionResult TrabalheConosco()
         {
             return View();
