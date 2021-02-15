@@ -16,5 +16,16 @@ create table tbl_compra(
     blocoApa_usu varchar(10),
     formaPag_usu varchar(20)
 );
-drop table tbl_compra;
+create table tbl_parceiro(
+	cd_parc int not null primary key auto_increment,
+    nm_parc varchar(50) not null,
+    empresa_parc varchar(50) not null,
+    cnpj_parc varchar(17) not null,
+    email_parc varchar(40) not null,
+    site_parc varchar(40),
+    end_parc varchar(50),
+    tel_parc varchar(30) not null,
+    redeSocial_parc varchar(40),
+    descr_parc varchar(2000)
+);
 select * from tbl_compra;

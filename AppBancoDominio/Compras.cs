@@ -14,13 +14,13 @@ namespace AppBancoDominio
         [DisplayName("Código da Compra:")]
         public int cd_compra { get; set; }
 
-        //[DisplayName("Nome do Produto:")]
-        //public string nm_prod { get; set; }
+        [DisplayName("Nome do Produto:")]
+        public string nm_prod { get; set; }
 
-        //[DisplayName("Preço do Produto:")]
-        //[Required(ErrorMessage = "Digite apenas o número, sem vírgula ou ponto!")]
-        //public decimal preco_prod { get; set; }
-        
+        [DisplayName("Preço do Produto:")]
+        [Required(ErrorMessage = "Digite apenas o número, sem vírgula ou ponto!")]
+        public decimal preco_prod { get; set; }
+
         [DisplayName("CPF do Usuário")]
         public string cpf_usu { get; set; }
         
