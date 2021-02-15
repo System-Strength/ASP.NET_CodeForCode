@@ -45,6 +45,7 @@
     <Compile Include="ComprasDAO.cs" />
     <Compile Include="CriaContaDAO.cs" />
     <Compile Include="LoginDAO.cs" />
+    <Compile Include="ParceiroDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

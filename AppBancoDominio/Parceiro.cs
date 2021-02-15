@@ -23,7 +23,10 @@ namespace AppBancoDominio
         
         [DisplayName("Email:")]
         public string email_parc { get; set; }
-        
+
+        [DisplayName("Endereço:")]
+        public string end_parc { get; set; }
+
         [DisplayName("Site:")]
         public string site_parc { get; set; }
         
