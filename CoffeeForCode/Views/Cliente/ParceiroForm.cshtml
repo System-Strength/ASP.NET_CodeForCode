@@ -11,6 +11,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>Seja Parceiro - CoffeeForCode</title>
     <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
+    <link href="~/Css/ParceiroForm.css">
+    
     <style>
         body {
             margin: 0;
@@ -66,7 +68,7 @@
             color: white;
             transition: 0.5s;
         }
-        .back img {
+        .back img{
             width: 2vw;
             height: 2vw;
             margin: 30% 15%;
@@ -107,6 +109,51 @@
             letter-spacing: 1px;
             color: #6B4D41;
         }
+        .down img {
+            transform: rotate(270deg);
+            width: 2vw;
+            height: 2vw;
+            margin-left:50%;
+            transition: 1s;
+            cursor: pointer;
+        }
+        .campo {
+            font: bold 15pt Candara;
+            display: block;
+            padding: 18px;
+            width: 30vw;
+            border-radius: 5px;
+            border: solid 4px #FFD500;
+            outline: none;
+            margin-left: 5%;
+        }
+        .descricao{
+            height: 50vh;
+        }
+        .form-group{
+            margin: 2%;
+        }
+        input::placeholder {
+            font: italic 12pt Comic Sans MS;
+        }
+        .button {
+            cursor: pointer;
+            width: 15vw;
+            margin: 0% 35%;
+            display: flex;
+            padding: 15px;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px;
+            border: none;
+            color: #fff;
+            font: bold 12pt Comic Sans MS;
+            background-color: #9f4845;
+            color: #fff;
+        }
+
+
     </style>
 </head>
 <body>
@@ -131,108 +178,99 @@
     </main>
     <main class="second_main">
         <div class="msg_one" style=" width: 70%; margin: 4% 12%"><h2>Que bom ter você aqui!<br />Primeiramente nós da CoffeeForCode gostaríamos de<br /> agradecer pelo seu interesse em se tornar nosso parceiro.</h2></div>
-        <div class="msg_two" style=" width: 70%; margin: 4% 12%"><h2>
-    Aqui vai um pouco de quem somos, somos uma empresa de alimentos e bebidas,
-    que vendemos produtos de nossas empresas parceiras com foco no café da manhã,
-    a CFC tem o máximo de RESPONSABILIDADE, SEGURANÇA e QUALIDADE para que
-    o alimento ou bebida seja vendido da melhor forma possível
-    e para que os nossos clientes possam sempre comprar conosco.
-</h2></div>
+        <div class="msg_two" style=" width: 70%; margin: 1% 12%">
+            <h2>
+                Aqui vai um pouco de quem somos, somos uma empresa de alimentos e bebidas,
+                que vendemos produtos de nossas empresas parceiras com foco no café da manhã,
+                a CFC tem o máximo de RESPONSABILIDADE, SEGURANÇA e QUALIDADE para que
+                o alimento ou bebida seja vendido da melhor forma possível
+                e para que os nossos clientes possam sempre comprar conosco.
+            </h2>
+        </div>
     </main>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+    <div class="down"><img src="~/fonts/Home_Login/voltar.png"></div>
+    <section>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.cd_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.cd_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.cd_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            <div class="tit" style="margin-left: 42%;"><h2>SEJA PARCEIRO!</h2></div>
+            <main style="display: flex;">
+                <div class="form_one" style=" margin-left: 8%;">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.nm_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Escreva seu nome Completo" } })
+                            @Html.ValidationMessageFor(model => model.nm_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.nm_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.nm_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.nm_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.empresa_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Agora o nome da empresa" } })
+                            @Html.ValidationMessageFor(model => model.empresa_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.empresa_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.empresa_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.empresa_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.cnpj_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Também vamos precisar do CNPJ" } })
+                            @Html.ValidationMessageFor(model => model.cnpj_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.cnpj_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.cnpj_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.cnpj_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.email_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Um e-mail para entrarmos em contato" } })
+                            @Html.ValidationMessageFor(model => model.email_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.email_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.email_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.email_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.site_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Em qual site encontramos sua empresa?" } })
+                            @Html.ValidationMessageFor(model => model.site_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.end_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Endereço da sua empresa....." } })
+                            @Html.ValidationMessageFor(model => model.end_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.end_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.end_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.end_parc, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.tel_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Telefone da sua empresa...." } })
+                            @Html.ValidationMessageFor(model => model.tel_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="form_two" style="margin-left: 10%;">
+                   
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.site_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.site_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.site_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.redeSocial_parc, new { htmlAttributes = new { @class = "campo", @placeholder = "Uma rede social de sua empresa" } })
+                            @Html.ValidationMessageFor(model => model.redeSocial_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.tel_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.tel_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.tel_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.descr_parc, new { @class = "campo descricao", @placeholder = "Descreva sua empresa...." } )
+                            @Html.ValidationMessageFor(model => model.descr_parc, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.redeSocial_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.redeSocial_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.redeSocial_parc, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="ENVIAR" class="button">
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.descr_parc, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.descr_parc, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.descr_parc, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
+            </main>
         }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+    </section>
 </body>
 </html>
