@@ -9,16 +9,140 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ParceiroForm</title>
+    <title>Seja Parceiro - CoffeeForCode</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header, .tit {
+            display: inline-flex;
+        }
+
+        .back {
+            display: inline-flex;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #fff6e5;
+            display: flex;
+            width: 98.7vw;
+        }
+
+        .logo {
+            margin-left: 8%;
+            width: 6vw;
+            height: 12vh;
+        }
+
+        #loc {
+            background-color: #9f4845;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            width: 90%;
+            margin: 2%;
+        }
+
+        li a {
+            font: bold 12pt comic Sans MS;
+            text-decoration: none;
+            color: #707070;
+            display: flex;
+            padding: 6px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            list-style: none;
+            margin-left: 10vw;
+        }
+
+        li a:hover {
+            background-color: #9f4845;
+            color: white;
+            transition: 0.5s;
+        }
+        .back img {
+            width: 2vw;
+            height: 2vw;
+            margin: 30% 15%;
+        }
+
+        .back h4 {
+            display: flex;
+            color: #9f4845;
+            font: bold 15pt Comic Sans MS;
+        }
+
+        .tit {
+            display: inline-flex;
+            width: 35vw;
+            margin-left: 32%;
+        }
+
+            .tit h2 {
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font: bold 20pt Comic Sans MS;
+                color: #6b4d41;
+            }
+
+        .subtit {
+            font: normal 15pt comic Sans MS;
+            text-transform: uppercase;
+            color: #b09081;
+            text-align: center;
+        }
+        .msg_one{
+            font: normal 12pt Comic Sans MS;
+            letter-spacing: 1px;
+            color: #967c71;
+        }
+        .msg_two {
+            font: normal 12pt Comic Sans MS;
+            letter-spacing: 1px;
+            color: #6B4D41;
+        }
+    </style>
 </head>
 <body>
-    @using (Html.BeginForm()) 
+    <header>
+        <nav>
+            <img src="~/fonts/Home_Cliente/logo_copo.png" class="logo" alt="">
+            <ul>
+                <li><a href="Home" id="">Home</a></li>
+                <li><a href="Cardapio">Cardápio</a></li>
+                <li><a href="Parceiro" id="loc">Seja parceiro</a></li>
+                <li><a href="">Trabalhe conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="first_main" style="height: 10vh; width:97vw;margin-top: 2%; ">
+        <a href="Parceiro" style="text-decoration: none;">
+            <div class="back">
+                <img src="~/fonts/Home_Login/voltar.png"><h4>Voltar</h4>
+            </div>
+        </a>
+        <div class="tit"><h2>OLÁ, SEJA BEM VINDO!</h2></div>
+    </main>
+    <main class="second_main">
+        <div class="msg_one" style=" width: 70%; margin: 4% 12%"><h2>Que bom ter você aqui!<br />Primeiramente nós da CoffeeForCode gostaríamos de<br /> agradecer pelo seu interesse em se tornar nosso parceiro.</h2></div>
+        <div class="msg_two" style=" width: 70%; margin: 4% 12%"><h2>
+    Aqui vai um pouco de quem somos, somos uma empresa de alimentos e bebidas,
+    que vendemos produtos de nossas empresas parceiras com foco no café da manhã,
+    a CFC tem o máximo de RESPONSABILIDADE, SEGURANÇA e QUALIDADE para que
+    o alimento ou bebida seja vendido da melhor forma possível
+    e para que os nossos clientes possam sempre comprar conosco.
+</h2></div>
+    </main>
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>Parceiro</h4>
-            <hr />
+
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.cd_parc, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -27,7 +151,7 @@
                     @Html.ValidationMessageFor(model => model.cd_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.nm_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -35,7 +159,7 @@
                     @Html.ValidationMessageFor(model => model.nm_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.empresa_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -43,7 +167,7 @@
                     @Html.ValidationMessageFor(model => model.empresa_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.cnpj_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -51,7 +175,7 @@
                     @Html.ValidationMessageFor(model => model.cnpj_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.email_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -59,7 +183,7 @@
                     @Html.ValidationMessageFor(model => model.email_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.end_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -67,7 +191,7 @@
                     @Html.ValidationMessageFor(model => model.end_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.site_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -75,7 +199,7 @@
                     @Html.ValidationMessageFor(model => model.site_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.tel_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -83,7 +207,7 @@
                     @Html.ValidationMessageFor(model => model.tel_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.redeSocial_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -91,7 +215,7 @@
                     @Html.ValidationMessageFor(model => model.redeSocial_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.descr_parc, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -99,15 +223,14 @@
                     @Html.ValidationMessageFor(model => model.descr_parc, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
-        </div>
-    }
-    
+        }
+
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
