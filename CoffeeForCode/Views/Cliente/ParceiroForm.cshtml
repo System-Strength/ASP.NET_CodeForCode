@@ -17,7 +17,9 @@
         body {
             margin: 0;
         }
-
+        html{
+            scroll-behavior: smooth;
+        }
         header, .tit {
             display: inline-flex;
         }
@@ -114,8 +116,11 @@
             width: 2vw;
             height: 2vw;
             margin-left:50%;
-            transition: 1s;
+            transition: 0.5s;
             cursor: pointer;
+        }
+        .down img:hover{
+           margin-top: 0.8%;
         }
         .campo {
             font: bold 15pt Candara;
@@ -188,8 +193,8 @@
             </h2>
         </div>
     </main>
-    <div class="down"><img src="~/fonts/Home_Login/voltar.png"></div>
-    <section>
+    <a href="#form"><div class="down"><img src="~/fonts/Home_Login/voltar.png"></div></a>
+    <section id="form">
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
