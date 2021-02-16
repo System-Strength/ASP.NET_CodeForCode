@@ -1,0 +1,177 @@
+﻿@model AppBancoDominio.TrabalheConosco
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trabalhe Conosco - CoffeeForCode</title>
+    <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
+    <style>
+        body {
+            margin: 0;
+        }
+        header, .tit {
+            display: inline-flex;
+        }
+        .back {
+            display: inline-flex;
+            cursor: pointer;
+        }
+        nav {
+            background-color: #fff6e5;
+            display: flex;
+            width: 100vw;
+        }
+        .logo {
+            margin-left: 8%;
+            width: 6vw;
+            height: 12vh;
+        }
+        #loc {
+            background-color: #9f4845;
+            color: #fff;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+            width: 90%;
+            margin: 2%;
+        }
+        li a {
+            font: bold 12pt comic Sans MS;
+            text-decoration: none;
+            color: #707070;
+            display: flex;
+            padding: 6px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            list-style: none;
+            margin-left: 10vw;
+        }
+        li a:hover {
+            background-color: #9f4845;
+            color: white;
+            transition: 0.5s;
+        }
+        .tit {
+            display: inline-flex;
+            margin-left: 27%;
+        }
+        .tit h2 {
+            font: bold 25pt Comic Sans MS;
+            color: #6b4d41;
+        }
+        .form-horizontal {
+            position: relative;
+            width: 550px;
+            background: #fff;
+            border: solid 6px #fff6e5;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            border-radius: 4px;
+            text-align: center;
+            margin-left: 28%;
+            overflow: hidden;
+            transition: 0.5s;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+        }
+        .campo {
+            font: bold 15pt Candara;
+            display: block;
+            padding: 10px;
+            width: 25vw;
+            border-radius: 5px;
+            border: solid 4px #FFD500;
+            outline: none;
+            margin: 4% 15%;
+        }
+        input::placeholder {
+            font: italic 12pt Comic Sans MS;
+        }
+        .button {
+            cursor: pointer;
+            width: 15vw;
+            margin: 0% 28%;
+            display: flex;
+            padding: 15px;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px;
+            border: none;
+            color: #fff;
+            font: bold 12pt Comic Sans MS;
+            background-color: #9f4845;
+            color: #fff;
+        }
+        .file::-webkit-file-upload-button{
+            visibility:hidden;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="~/fonts/Home_Cliente/logo_copo.png" class="logo" alt="">
+            <ul>
+                <li><a href="Home" id="">Home</a></li>
+                <li><a href="Cardapio">Cardápio</a></li>
+                <li><a href="Parceiro">Seja parceiro</a></li>
+                <li><a href="TrabalheConosco" id="loc">Trabalhe conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="tit"><h2>VENHA TRABALHAR COM A GENTE!</h2></div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nm_usu, new { htmlAttributes = new { @class = "campo", @placeholder = "Escreva seu nome Completo" } })
+                @Html.ValidationMessageFor(model => model.nm_usu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tel_usu, new { htmlAttributes = new { @class = "campo", @placeholder = "Digite seu Telefone ou celular" } })
+                @Html.ValidationMessageFor(model => model.tel_usu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email_usu, new { htmlAttributes = new { @class = "campo", @placeholder = "Um e-mail para entrarmos em contato" } })
+                @Html.ValidationMessageFor(model => model.email_usu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <label for="arquivo" class="campo arquivo" style="margin-bottom:0.5%; #fff6e5; color: #707070; font: bold 15pt Comic Sans MS; cursor: pointer;">FAZER UPLOAD  DO CURRÍCULO</label>
+                <input type="file" size="10"  style="margin-left:-58%; margin-bottom:2%; outline: none; color:#6b4d41 ;font: normal 12pt Comic Sans MS " id="arquivo" class="file"/>
+                @Html.ValidationMessageFor(model => model.email_usu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ENVIAR" class="button" />
+            </div>
+        </div>
+    </div>
+        }
+
+    </section>
+</body>
+</html>

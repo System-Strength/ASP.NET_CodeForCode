@@ -311,6 +311,7 @@
     <Content Include="Views\Cliente\Parceiro.cshtml" />
     <Content Include="Views\Cliente\ParceiroForm.cshtml" />
     <Content Include="Views\Cliente\Compra.cshtml" />
+    <Content Include="Views\Cliente\TrabalheConosco.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
