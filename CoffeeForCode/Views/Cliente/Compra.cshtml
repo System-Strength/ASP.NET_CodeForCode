@@ -17,10 +17,12 @@
         header, .tit {
             display: inline-flex;
         }
-        .back{
+
+        .back {
             display: inline-flex;
             cursor: pointer;
         }
+
         nav {
             background-color: #fff6e5;
             display: flex;
@@ -71,7 +73,7 @@
             padding-left: 4%;
         }
 
-        .container{
+        .container {
             color: white;
             font: bold 12pt Comic Sans MS;
             text-decoration: none;
@@ -92,6 +94,7 @@
         section {
             display: flex;
         }
+
         .back img {
             width: 2vw;
             height: 2vw;
@@ -103,24 +106,27 @@
             color: #9f4845;
             font: bold 15pt Comic Sans MS;
         }
+
         .tit {
             display: inline-flex;
             width: 25vw;
             margin-left: 48%;
         }
 
-        .tit h2 {
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font: bold 18pt Comic Sans MS;
-            color: #6b4d41;
-        }
+            .tit h2 {
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font: bold 18pt Comic Sans MS;
+                color: #6b4d41;
+            }
+
         .subtit {
             font: normal 15pt comic Sans MS;
             text-transform: uppercase;
             color: #b09081;
             text-align: center;
         }
+
         .campo {
             display: block;
             padding: 10px;
@@ -135,7 +141,98 @@
             font: italic 12pt Comic Sans MS;
         }
 
-        .btn_login {
+
+        .text-danger {
+            transition: ease 2s;
+            margin: 3%;
+            display: inline-flex;
+            color: #5E3F34;
+            font: bold 12pt Comic Sans MS;
+        }
+
+        form {
+            display: block;
+            height: 55vh;
+            margin-top: 2%;
+        }
+
+        /*.modal-container {
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            background: transparent;
+            border-radius: 5px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .modal-container.show {
+                display: flex;
+            }
+
+        .modal {
+            background: white;
+            width: 35vw;
+            height: 40vh;
+            min-width: 300px;
+            border: 10px solid white;
+            border-radius: 20px;
+        }
+
+        .show .modal {
+            animation: ease-out modal 3s;
+        }
+
+        .modal-header {
+            text-align: center;
+            height: 50px;
+            padding: 10px;
+            background: white;
+        }
+
+            .modal-header img {
+                width: 15vw;
+                animation: modal 1s;
+                text-align: center;
+                margin-top: 5%;
+            }
+
+        #close {
+            float: right;
+            background: RED;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 20px;
+            border: none;
+            padding-bottom: 5px;
+            cursor: pointer;
+            overflow: none;
+        }
+
+            #close:hover {
+                transform: scale(1.2);
+                transition: 0.2s ease-in-out;
+            }
+
+            #close:active {
+                transform: scale(0.9);
+            }
+
+        #modal-title {
+            font: bold 16pt Comic Sans MS;
+            color: green;
+            text-shadow: 0 0 15px rgb(245, 211, 255);
+        }
+*/
+        #open {
             cursor: pointer;
             width: 22vw;
             margin: 0% 5%;
@@ -151,18 +248,15 @@
             font: normal 12pt Candara;
         }
 
-        .text-danger {
-            transition: ease 2s;
-            margin: 3%;
-            display: inline-flex;
-            color: #5E3F34;
-            font: bold 12pt Comic Sans MS;
-        }
-        form{
-            display: block;
-            height: 55vh;
-            margin-top: 2%;
-        }
+            #open:hover {
+                transform: scale(1.1);
+                transition: 0.2s ease-in-out;
+                background: #a14d46;
+            }
+
+            #open:active {
+                transform: scale(1);
+            }
     </style>
 </head>
 <body>
@@ -233,7 +327,7 @@
                     </div>
                 </div>
 
-                <button class="btn_login">COMPRAR</button>
+                <button id="open" class="btn_login">COMPRAR</button>
             }
             <hr style="width: 0.5vw; height: 55vh; background-color: #B0E5F3; border: none; margin:4%;">
         </form>
@@ -253,7 +347,7 @@
                 <div class="form-group">
                     <div class="col-md-10">
                         <iframe class="campo" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14629.13374852649!2d-46.8086855!3d-23.5582617!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d54688127eff95c!2sPadaria%20P%C3%A3o%20Bom.!5e0!3m2!1spt-BR!2sbr!4v1613140863962!5m2!1spt-BR!2sbr" width="150" height="85" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        <br/>
+                        <br />
                     </div>
                 </div>
 
@@ -264,10 +358,43 @@
                         @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <button class="btn_login">COMPRAR</button>
+                <button id="open" class="btn_login">COMPRAR</button>
             }
         </form>
-
+        @*<div class="modal-container" id="modal">
+            <div class="modal">
+                <div class="modal-header">
+                    <button id="close">x</button>
+                    <h2 id="modal-title">COMPRA REALIZADA COM SUCESSO</h2>
+                    <img src="~/fonts/Pop-up/check.png">
+                </div>
+            </div>
+        </div>*@
     </section>
 </body>
+@*<script>
+    function openModal(modalID) {
+        // Captura o modal através do seu ID
+        const modal = document.getElementById(modalID);
+        // Adiciona a classe que faz o modal aparecer
+        modal.classList.add('show');
+    }
+
+    function closeModal(modalID) {
+        // Captura o modal através do seu ID
+        const modal = document.getElementById(modalID);
+        // Adiciona a classe que faz o modal aparecer
+        modal.classList.remove('show');
+    }
+
+    // Captura o botão de abrir o modal
+    const botaoAbrir = document.querySelector('#open');
+    // Adiciona o evento que chama a função de abrir o modal ao clicar no botão
+    botaoAbrir.addEventListener('click', function () { openModal('modal') });
+
+    // Captura o botão de fechar o modal
+    const botaoFechar = document.querySelector('#close');
+    // Adiciona o evento que chama a função de abrir o modal ao clicar no botão
+    botaoFechar.addEventListener('click', function () { closeModal('modal') });
+</script>*@
 </html>

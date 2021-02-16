@@ -9,12 +9,12 @@ create table tbl_conta(
     senha_login varchar(14) not null
 );
 create table tbl_compra(
-	cd_compra int not null primary key auto_increment,
+	cd_compra int primary key auto_increment,
 	cpf_usu varchar(14), 
-	end_usu varchar(50) not null,
+	end_usu varchar(50),
     numCasa_usu int,
     blocoApa_usu varchar(10),
-    formaPag_usu varchar(20)
+    formaPag_usu varchar(20) not null
 );
 create table tbl_parceiro(
 	cd_parc int not null primary key auto_increment,
@@ -28,4 +28,4 @@ create table tbl_parceiro(
     redeSocial_parc varchar(40),
     descr_parc varchar(2000)
 );
-select * from tbl_parceiro;
+select * from tbl_compra;

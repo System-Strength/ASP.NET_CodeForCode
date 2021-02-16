@@ -220,6 +220,7 @@
     <Content Include="fonts\Home_Login\logo.png" />
     <Content Include="fonts\Home_Login\logo_copo.png" />
     <Content Include="fonts\Home_Login\voltar.png" />
+    <Content Include="fonts\Pop-up\check.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Js\alertify.js" />
@@ -307,9 +308,9 @@
     <Content Include="Views\Cliente\Cardapio_Sanduiche.cshtml" />
     <Content Include="Views\Cliente\Cardapio_Doces.cshtml" />
     <Content Include="Views\Cliente\Cardapio_Burguer.cshtml" />
-    <Content Include="Views\Cliente\Compra.cshtml" />
     <Content Include="Views\Cliente\Parceiro.cshtml" />
     <Content Include="Views\Cliente\ParceiroForm.cshtml" />
+    <Content Include="Views\Cliente\Compra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

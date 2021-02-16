@@ -55,8 +55,10 @@ namespace CoffeeForCode.Controllers
         {
             if (compra.formaPag_usu != null)
             {
-                var metodoUsuario = new ComprasDAO();
-                metodoUsuario.Insert(compra);
+                var metodoCompra = new ComprasDAO();
+                metodoCompra.Insert(compra);
+            }
+            else{
                 return RedirectToAction("Home", "Cliente");
             }
             return View(compra);
@@ -78,7 +80,7 @@ namespace CoffeeForCode.Controllers
                 metodoParceiro.Insert(parceiro);
                 return RedirectToAction("Home", "Cliente");
             }
-            return View(parceiro);
+            return View();
         }
         public ActionResult TrabalheConosco()
         {
