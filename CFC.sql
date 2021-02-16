@@ -28,4 +28,10 @@ create table tbl_parceiro(
     redeSocial_parc varchar(40),
     descr_parc varchar(2000)
 );
+create table tbl_trabalheConosco(
+	cd_usu int not null primary key auto_increment,
+	nm_usu varchar(50) not null,
+    tel_usu varchar(20) not null,
+    email_usu varchar(40) not null
+);
 select * from tbl_compra;
