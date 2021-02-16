@@ -88,7 +88,7 @@
             border-radius: 5px;
             border: solid 4px #FFD500;
             outline: none;
-            margin: 4% 15%;
+            margin: 2% 15%;
         }
         input::placeholder {
             font: italic 12pt Comic Sans MS;
@@ -108,9 +108,20 @@
             font: bold 12pt Comic Sans MS;
             background-color: #9f4845;
             color: #fff;
+            transition: 0.5s;
         }
+            .button:hover {
+                background-color: #6b4d41;
+            }
         .file::-webkit-file-upload-button{
             visibility:hidden;
+        }
+        .text-danger {
+            transition: ease 2s;
+            margin:0%; 
+            display: flex;
+            color: #5E3F34;
+            font: bold 12pt Comic Sans MS;
         }
 </style>
 </head>
@@ -132,7 +143,7 @@
         {
             @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    <div class="form-horizontal" style="overflow: scroll;">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
