@@ -86,5 +86,16 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult TrabalheConosco(TrabalheConosco trabalhe)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoTrabalhe = new TrabalheConoscoDAO();
+                metodoTrabalhe.Insert(trabalhe);
+                return RedirectToAction("Home", "Cliente");
+            }
+            return View();
+        }
     }
 }
