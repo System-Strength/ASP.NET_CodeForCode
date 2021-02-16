@@ -34,4 +34,4 @@ create table tbl_trabalheConosco(
     tel_usu varchar(20) not null,
     email_usu varchar(40) not null
 );
-select * from tbl_compra;
+select * from tbl_trabalheConosco;
