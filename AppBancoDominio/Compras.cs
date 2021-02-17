@@ -27,7 +27,7 @@ namespace AppBancoDominio
         [DisplayName("Endereço do Usuário")]
         public string end_usu { get; set; }
 
-        [DisplayName("Nº")]
+        [DisplayName("Nº ou Bloco")]
         public string numCasa_usu { get; set; }
 
         [DisplayName("Bloco")]
