@@ -12,7 +12,7 @@ create table tbl_compra(
 	cd_compra int primary key auto_increment,
 	cpf_usu varchar(14), 
 	end_usu varchar(50),
-    numCasa_usu int,
+    numCasa_usu varchar(40),
     blocoApa_usu varchar(10),
     formaPag_usu varchar(20) not null
 );
@@ -34,4 +34,4 @@ create table tbl_trabalheConosco(
     tel_usu varchar(20) not null,
     email_usu varchar(40) not null
 );
-select * from tbl_trabalheConosco;
+select * from tbl_compra;

@@ -291,8 +291,7 @@
             </a>
         </main>
 
-        <form>
-            @using (Html.BeginForm())
+            @using (Html.BeginForm(FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
                 <h3 class="subtit">ENTREGAR EM SUA CASA</h3>
@@ -315,8 +314,8 @@
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.blocoApa_usu, new { htmlAttributes = new { @placeholder = "Bloco", @class = "campo" } })
-                        @Html.ValidationMessageFor(model => model.blocoApa_usu, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.cpf_usu, new { htmlAttributes = new { @placeholder = "CPF", @class = "campo" } })
+                        @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -326,12 +325,9 @@
                         @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-                <button id="open" class="btn_login">COMPRAR</button>
+                <input type="submit" value="COMPRAR" class="btn_login" id="open"/>
             }
             <hr style="width: 0.5vw; height: 55vh; background-color: #B0E5F3; border: none; margin:4%;">
-        </form>
-        <form>
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
@@ -358,9 +354,8 @@
                         @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <button id="open" class="btn_login">COMPRAR</button>
+                <input type="submit" value="COMPRAR" class="btn_login" id="open" />
             }
-        </form>
         @*<div class="modal-container" id="modal">
             <div class="modal">
                 <div class="modal-header">

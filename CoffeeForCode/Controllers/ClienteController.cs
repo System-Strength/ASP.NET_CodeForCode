@@ -53,15 +53,13 @@ namespace CoffeeForCode.Controllers
         [HttpPost]
         public ActionResult Compra(Compras compra)
         {
-            if (compra.formaPag_usu != null)
+            if (ModelState.IsValid)
             {
                 var metodoCompra = new ComprasDAO();
                 metodoCompra.Insert(compra);
-            }
-            else{
                 return RedirectToAction("Home", "Cliente");
             }
-            return View(compra);
+            return View();
         }
         public ActionResult Parceiro()
         {

@@ -28,12 +28,13 @@ namespace AppBancoDominio
         public string end_usu { get; set; }
 
         [DisplayName("Nº")]
-        public int numCasa_usu { get; set; }
+        public string numCasa_usu { get; set; }
 
         [DisplayName("Bloco")]
         public string blocoApa_usu { get; set; }
 
         [DisplayName("Forma de Pagamento")]
+        [Required(ErrorMessage = "Obrigatório informar a forma de pagamento!")]
         public string formaPag_usu { get; set; }
     }
 }
