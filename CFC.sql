@@ -18,7 +18,7 @@ create table tbl_cardapio(
     data_prod date
 );
 
-insert into tbl_cardapio (nm_prod, preco_prod, cat_prod, img_prod) values ( "Expresso", "5.00", "Café", load_file("/expresso.jpg"));
+insert into tbl_cardapio (nm_prod, preco_prod, cat_prod, qntd_prod, img_prod) values ( "Expresso", "5.00", "Café", "1", "/expresso.jpg");
 
 create table tbl_compra(
 	cd_compra int primary key auto_increment,
