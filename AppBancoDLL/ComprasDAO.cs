@@ -83,7 +83,7 @@ namespace AppBancoDLL
                     cd_compra = int.Parse(retorno["cd_compra"].ToString()),
                     cpf_usu = retorno["cpf_usu"].ToString().Replace(".", string.Empty).Replace("-", string.Empty),
                     end_usu = retorno["end_usu"].ToString(),
-                    numCasa_usu = ["cd_compra"].ToString(),
+                    numCasa_usu = retorno["numCasa_usu"].ToString(),
                     blocoApa_usu = retorno["blocoApa_usu"].ToString(),
                     formaPag_usu = retorno["formaPag_usu"].ToString()
                 };
