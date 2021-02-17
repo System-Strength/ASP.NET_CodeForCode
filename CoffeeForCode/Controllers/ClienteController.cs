@@ -57,6 +57,7 @@ namespace CoffeeForCode.Controllers
             {
                 var metodoCompra = new ComprasDAO();
                 metodoCompra.Insert(compra);
+                return RedirectToAction("Confirma", "Cliente");
             }
             return View();
         }
