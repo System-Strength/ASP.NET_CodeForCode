@@ -8,15 +8,51 @@
     <title>Confirmação - CoffeeForCode</title>
     <link rel="sortcut icon" href="~/fonts/Home_Cliente/logo_copo.png" type="image/png" />
     <style>
-        body{
+        body {
             margin: 0;
             background-color: #b09081;
+            
+        }
+        section {
+            background-color: #fff6e5;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            z-index: 1;
+            filter: blur(100px);
+        }
+        .container {
+            position: absolute;
+            display: block;
+            width: 70vw;
+            background: #fff;
+            border: solid 6px #6B4D41;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            border-radius: 4px;
+            text-align: center;
+            margin: -43% 14%;
+            z-index: 1000 !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .5); 
+        }
+        .container img {
+            width: 20vw;
+            text-align: center;
+            margin-top: 8%;
+        }
+        .container h2 {
+            font: bold 35pt Comic Sans MS;
+            color: #9F4845;
         }
     </style>
 </head>
 <body>
     <section>
-
     </section>
+        <div class="container">
+            <img src="~/fonts/Pop-up/check.png">
+            <h2>COMPRA REALIZA COM SUCESSO!</h2>
+        </div>
 </body>
 </html>
