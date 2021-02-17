@@ -8,6 +8,18 @@ create table tbl_conta(
     rg_usu varchar(12) not null,
     senha_login varchar(14) not null
 );
+create table tbl_cardapio(
+	cd_prod int primary key auto_increment,
+    img_prod mediumblob not null,
+    nm_prod varchar(50) not null,
+    preco_prod decimal(6, 2) not null,
+	qntd_prod int not null,
+    cat_prod varchar(50) not null,
+    data_prod date
+);
+
+insert into tbl_cardapio (nm_prod, preco_prod, cat_prod, img_prod) values ( "Expresso", "5.00", "Café", load_file("/expresso.jpg"));
+
 create table tbl_compra(
 	cd_compra int primary key auto_increment,
 	cpf_usu varchar(14), 
