@@ -94,5 +94,9 @@ namespace CoffeeForCode.Controllers
             }
             return View();
         }
+        public ActionResult Confirma()
+        {
+            return View();
+        }
     }
 }
