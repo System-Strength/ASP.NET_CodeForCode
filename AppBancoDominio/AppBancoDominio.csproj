@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cardapio.cs" />
     <Compile Include="Compras.cs" />
     <Compile Include="Conta.cs" />
     <Compile Include="Parceiro.cs" />

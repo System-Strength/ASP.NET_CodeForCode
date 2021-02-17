@@ -1,4 +1,5 @@
-﻿@{
+﻿@model AppBancoDominio.Cardapio
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -12,10 +13,10 @@
             margin: 0;
         }
 
-        header, .back, .tit{
+        header, .back, .tit {
             display: inline-flex;
         }
-        
+
         nav {
             background-color: #fff6e5;
             display: flex;
@@ -52,14 +53,16 @@
             margin-left: 10vw;
         }
 
-        li a:hover {
-            background-color: #9f4845;
-            color: white;
-            transition: 0.5s;
-        }
-        section{
+            li a:hover {
+                background-color: #9f4845;
+                color: white;
+                transition: 0.5s;
+            }
+
+        section {
             margin: 1%;
         }
+
         .back img {
             width: 2vw;
             height: 2vw;
@@ -71,20 +74,24 @@
             color: #9f4845;
             font: bold 15pt Comic Sans MS;
         }
-        .tit{
+
+        .tit {
             display: inline-flex;
             margin-left: 40%;
         }
-        .tit h2 {
-            font: bold 18pt Comic Sans MS;
-            color: #6b4d41;
-        }
-        main{
+
+            .tit h2 {
+                font: bold 18pt Comic Sans MS;
+                color: #6b4d41;
+            }
+
+        main {
             display: flex;
             width: 75vw;
-            height:70vh;
+            height: 70vh;
             padding-left: 10%;
         }
+
         .container, .box {
             color: white;
             font: bold 12pt Comic Sans MS;
@@ -95,14 +102,16 @@
             transition: 0.5s;
             cursor: pointer;
         }
-        .container h2{
-            margin-bottom: -10%;
-        }
-        .container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 15px rgba(0, 0, 0, .5);
-        }
-</style>
+
+            .container h2 {
+                margin-bottom: -10%;
+            }
+
+            .container:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 15px rgba(0, 0, 0, .5);
+            }
+    </style>
 </head>
 <body>
     <header>
@@ -115,7 +124,7 @@
                 <li><a href="TrabalheConosco">Trabalhe conosco</a></li>
             </ul>
         </nav>
-       
+
     </header>
     <section>
         <a href="Cardapio" style="text-decoration: none;">
@@ -125,9 +134,9 @@
         </a>
         <div class="tit"><h2>Café</h2></div>
         <main>
-            <a href="Compra" onclick="Cafe()" class="container"  style=" background-image: url(/fonts/Home_Cliente/Cardapio/Cafe/expresso.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
+            <a href="Compra" onclick="Cafe()" class="container" style=" background-image: url(/fonts/Home_Cliente/Cardapio/Cafe/expresso.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; ">
                 <div class="box" style="background: none; width:50%;">
-                    
+                    <h2>Expresso</h2>
                     <h3>R$ 5,00</h3>
                 </div>
             </a>
@@ -143,7 +152,7 @@
                     <h3>R$ 4,50</h3>
                 </div>
             </a>
-        </main>      
+        </main>
     </section>
 </body>
 </html>
