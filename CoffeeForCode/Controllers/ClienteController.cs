@@ -61,6 +61,16 @@ namespace CoffeeForCode.Controllers
             }
             return View();
         }
+        public ActionResult DetalhesCompra(int cd)
+        {
+            var metodoCompra = new ComprasDAO();
+            var compra = metodoCompra.ListarId(cd);
+            if (compra == null)
+            {
+                return HttpNotFound();
+            }
+            return View(compra);
+        }
         public ActionResult Parceiro()
         {
             return View();

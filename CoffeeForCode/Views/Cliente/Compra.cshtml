@@ -291,71 +291,71 @@
             </a>
         </main>
 
-            @using (Html.BeginForm(FormMethod.Post))
-            {
-                @Html.AntiForgeryToken()
-                <h3 class="subtit">ENTREGAR EM SUA CASA</h3>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <h3 class="subtit">ENTREGAR EM SUA CASA</h3>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.end_usu, new { htmlAttributes = new { @placeholder = "Endereço", @class = "campo" } })
-                        @Html.ValidationMessageFor(model => model.end_usu, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.end_usu, new { htmlAttributes = new { @placeholder = "Endereço", @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.end_usu, "", new { @class = "text-danger" })
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.numCasa_usu, new { htmlAttributes = new { @placeholder = "N° ou Bloco", @class = "campo" } })
-                        @Html.ValidationMessageFor(model => model.numCasa_usu, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.numCasa_usu, new { htmlAttributes = new { @placeholder = "N° ou Bloco", @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.numCasa_usu, "", new { @class = "text-danger" })
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.cpf_usu, new { htmlAttributes = new { @placeholder = "CPF", @class = "campo" } })
-                        @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cpf_usu, new { htmlAttributes = new { @placeholder = "CPF", @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.formaPag_usu, new { htmlAttributes = new { @placeholder = "Forma de Pagamento", @class = "campo" } })
-                        @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.formaPag_usu, new { htmlAttributes = new { @placeholder = "Forma de Pagamento", @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
                 </div>
-                <input type="submit" value="COMPRAR" class="btn_login" id="open"/>
-            }
-            <hr style="width: 0.5vw; height: 55vh; background-color: #B0E5F3; border: none; margin:4%;">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                <h3 class="subtit">RETIRAR EM NOSSA LOJA</h3>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <input type="submit" value="COMPRAR" class="btn_login" id="open" />
+        }
+        <hr style="width: 0.5vw; height: 55vh; background-color: #B0E5F3; border: none; margin:4%;">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <h3 class="subtit">RETIRAR EM NOSSA LOJA</h3>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.cpf_usu, new { htmlAttributes = new { @placeholder = "CPF", @class = "campo" } })
-                        @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cpf_usu, new { htmlAttributes = new { @placeholder = "CPF", @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.cpf_usu, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        <iframe class="campo" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14629.13374852649!2d-46.8086855!3d-23.5582617!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d54688127eff95c!2sPadaria%20P%C3%A3o%20Bom.!5e0!3m2!1spt-BR!2sbr!4v1613140863962!5m2!1spt-BR!2sbr" width="150" height="85" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        <br />
-                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <iframe class="campo" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14629.13374852649!2d-46.8086855!3d-23.5582617!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d54688127eff95c!2sPadaria%20P%C3%A3o%20Bom.!5e0!3m2!1spt-BR!2sbr!4v1613140863962!5m2!1spt-BR!2sbr" width="150" height="85" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <br />
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.formaPag_usu, new { htmlAttributes = new { @placeholder = "Forma de Pagamento", @class = "campo" } })
-                        @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.formaPag_usu, new { htmlAttributes = new { @placeholder = "Forma de Pagamento", @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.formaPag_usu, "", new { @class = "text-danger" })
                 </div>
-                <input type="submit" value="COMPRAR" class="btn_login" id="open" />
-            }
+            </div>
+            <input type="submit" value="COMPRAR" class="btn_login" id="open" />
+        }
         @*<div class="modal-container" id="modal">
             <div class="modal">
                 <div class="modal-header">

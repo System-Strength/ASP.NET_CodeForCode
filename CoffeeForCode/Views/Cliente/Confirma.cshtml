@@ -45,15 +45,33 @@
             font: bold 35pt Comic Sans MS;
             color: #9F4845;
         }
+        .back img {
+            width: 6vw;
+            margin: 30% 5%;
+            cursor: pointer;
+            transition: ease 0.6s;
+        }
+            .back img:hover {
+                width: 6.5vw;
+            }
+        a {
+            margin: -47% 38%;
+            position: absolute;
+        }
+
     </style>
 </head>
 <body>
     <section>
     </section>
-        <div class="container">
-            <img src="~/fonts/Pop-up/check.png">
-            <h2>COMPRA REALIZA COM SUCESSO!</h2>
-            
-        </div>
+    <div class="container">
+        <img src="~/fonts/Pop-up/check.png">
+        <h2>COMPRA REALIZA COM SUCESSO!</h2>
+        <a href="Cardapio" style="text-decoration: none;">
+            <div class="back">
+                <img src="~/fonts/Pop-up/close.png">
+            </div>
+        </a>
+    </div>
 </body>
 </html>
