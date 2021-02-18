@@ -227,6 +227,7 @@
     <Content Include="Js\alertify.js" />
     <Content Include="Js\alertify.min.js" />
     <Content Include="Js\Categoria.js" />
+    <Content Include="Js\Compras.js" />
     <Content Include="Js\modernizr-2.6.2.js" />
     <Content Include="Js\sb-admin-2.js" />
     <Content Include="Js\sb-admin-2.min.js" />
