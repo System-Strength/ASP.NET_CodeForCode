@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AppBancoDLL.Funcionario
+namespace AppBancoDominio
 {
     public class Gerente
     {

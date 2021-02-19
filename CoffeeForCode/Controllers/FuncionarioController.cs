@@ -1,9 +1,5 @@
 ﻿using AppBancoDLL;
-using AppBancoDLL.Funcionario;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using AppBancoDominio;
 using System.Web.Mvc;
 
 namespace CoffeeForCode.Controllers

@@ -44,10 +44,12 @@
   <ItemGroup>
     <Compile Include="Cliente\Cardapio.cs" />
     <Compile Include="Cliente\Compras.cs" />
+    <Compile Include="Funcionario\Gerente.cs" />
     <Compile Include="Login\Conta.cs" />
     <Compile Include="Cliente\Parceiro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Cliente\TrabalheConosco.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

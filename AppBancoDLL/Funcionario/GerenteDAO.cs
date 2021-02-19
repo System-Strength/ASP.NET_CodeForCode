@@ -1,5 +1,4 @@
 ﻿using AppBancoADO;
-using AppBancoDLL.Funcionario;
 using AppBancoDominio;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
