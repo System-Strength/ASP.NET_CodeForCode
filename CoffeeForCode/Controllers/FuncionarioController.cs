@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppBancoDLL;
+using AppBancoDLL.Funcionario;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,7 +20,7 @@ namespace CoffeeForCode.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult VerificaGer()
+        public ActionResult VerificaGer(Gerente gerente)
         {
             if (ModelState.IsValid)
             {
