@@ -42,12 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComprasDAO.cs" />
-    <Compile Include="CriaContaDAO.cs" />
-    <Compile Include="LoginDAO.cs" />
-    <Compile Include="ParceiroDAO.cs" />
+    <Compile Include="Cliente\ComprasDAO.cs" />
+    <Compile Include="Login\CriaContaDAO.cs" />
+    <Compile Include="Login\LoginDAO.cs" />
+    <Compile Include="Cliente\ParceiroDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrabalheConoscoDAO.cs" />
+    <Compile Include="Cliente\TrabalheConoscoDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppBancoADO\AppBancoADO.csproj">

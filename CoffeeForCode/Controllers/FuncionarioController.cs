@@ -13,26 +13,26 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
-        public ActionResult VerificaGer()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult VerificaGer()
-        {
-            if (ModelState.IsValid)
-            {
-                if(gerente.senha_ger == "GerFunc2021")
-                {
-                    var metodoGer = new GerenteDAO();
-                    return RedirectToAction("CadastrarFunc", "Funcionario");
-                }
-                else
-                {
-                    ModelState.AddModelError("senha_ger", "Senha de Gerente Inválida!");
-                }
-            }
-            return View();
-        } 
+        //public ActionResult VerificaGer()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult VerificaGer()
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if(gerente.senha_ger == "GerFunc2021")
+        //        {
+        //            var metodoGer = new GerenteDAO();
+        //            return RedirectToAction("CadastrarFunc", "Funcionario");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("senha_ger", "Senha de Gerente Inválida!");
+        //        }
+        //    }
+        //    return View();
+        //} 
     }
 }

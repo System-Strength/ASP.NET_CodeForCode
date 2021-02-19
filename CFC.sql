@@ -46,4 +46,11 @@ create table tbl_trabalheConosco(
     tel_usu varchar(20) not null,
     email_usu varchar(40) not null
 );
+
+create table tbl_gerente(
+	nm_ger varchar(50) not null,
+    cpf_ger varchar(14) not null,
+    senha_ger varchar(12)  primary key not null
+);	
+
 select * from tbl_compra;
