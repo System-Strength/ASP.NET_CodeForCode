@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Cliente\Cardapio.cs" />
     <Compile Include="Cliente\Compras.cs" />
+    <Compile Include="Funcionario\Funcionario.cs" />
     <Compile Include="Funcionario\Gerente.cs" />
     <Compile Include="Login\Conta.cs" />
     <Compile Include="Cliente\Parceiro.cs" />

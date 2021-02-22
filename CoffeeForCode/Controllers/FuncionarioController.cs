@@ -32,7 +32,7 @@ namespace CoffeeForCode.Controllers
             }
             return View();
         }
-        public ActionResult CadastarFunc()
+        public ActionResult CadastrarFunc()
         {
             return View();
         }

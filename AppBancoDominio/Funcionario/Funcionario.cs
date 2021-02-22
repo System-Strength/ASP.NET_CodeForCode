@@ -22,6 +22,7 @@ namespace AppBancoDominio
 
         [DisplayName("CPF do Funcionário:")]
         [StringLength(14, MinimumLength = 14, ErrorMessage = "Esse campo deve ter 11 caracteres!")]
+        [Required(ErrorMessage = "Obrigatório digitar CPF do Funcionário!")]
         public string cpf_func { get; set; }
         
         [DisplayName("Endereço do Funcionário:")]
