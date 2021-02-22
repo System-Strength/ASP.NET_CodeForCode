@@ -53,4 +53,14 @@ create table tbl_gerente(
     senha_ger varchar(12)  primary key not null
 );	
 
-select * from tbl_compra;
+create table tbl_funcionario(
+	id_func int primary key auto_increment,
+    nm_func varchar(50) not null,
+    cg_func varchar(50) not null,
+    email_func varchar(40) not null,
+    cpf_func varchar(14) not null,
+    end_func varchar(50) not null,
+    tel_func varchar(15) not null
+);
+
+select * from tbl_funcionario;
