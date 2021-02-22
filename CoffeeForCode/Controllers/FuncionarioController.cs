@@ -32,5 +32,20 @@ namespace CoffeeForCode.Controllers
             }
             return View();
         }
+        public ActionResult CadastarFunc()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CadastrarFunc(Funcionario funcionario)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoFuncionario = new FuncionarioDAO();
+                metodoFuncionario.Insert(funcionario);
+                return RedirectToAction("FuncCadastrados");
+            }
+            return View(funcionario);
+        }
     }
 }

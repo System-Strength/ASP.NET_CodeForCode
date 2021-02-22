@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AppBancoDLL.FuncionarioDAO
+namespace AppBancoDLL
 {
     public class FuncionarioDAO
     {
