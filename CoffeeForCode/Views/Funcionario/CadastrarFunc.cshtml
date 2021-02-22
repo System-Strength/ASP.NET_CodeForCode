@@ -3,20 +3,29 @@
 @{
     ViewBag.Title = "CadastrarFunc";
     Layout = "~/Views/Shared/_CFCfunc.cshtml";
+    
 }
 <style>
-    section{
+    section {
         display: inline-flex;
     }
+
     .text-danger {
         transition: ease 2s;
         color: #5E3F34;
-        font: bold 12pt Comic Sans MS;
+        font: bold 10pt Comic Sans MS;
+        padding: 5px;
+        padding-right: 25px;
+        width: 120%;
+        margin-top: -5%;
+        display: block;
+        position: absolute;
     }
+
     form {
         display: block;
         width: 85vw;
-        height: 80vh;
+        height: 85vh;
         margin-top: 5%;
         margin-left: 20%;
         position: relative;
@@ -30,6 +39,7 @@
         transition: 0.5s;
         box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
     }
+
     h2 {
         text-align: center;
         display: block;
@@ -37,9 +47,11 @@
         text-transform: uppercase;
         color: #6b4d41;
     }
-    .first_main, .second_main{
+
+    .first_main, .second_main {
         display: inline-block;
     }
+
     .campo {
         font: bold 15pt Candara;
         display: block;
@@ -51,11 +63,13 @@
         margin: 15% 0%;
         margin-bottom: 8%;
     }
-    .campo::placeholder{
-        font: italic 14pt Comic Sans MS; 
-        opacity: 50%;
-    }
-    .btn_cad{
+
+        .campo::placeholder {
+            font: italic 14pt Comic Sans MS;
+            opacity: 50%;
+        }
+
+    .btn_cad {
         cursor: pointer;
         width: 16vw;
         display: flex;
@@ -72,13 +86,17 @@
         color: #fff;
         transition: 0.5s;
     }
-    .btn_cad:hover {
-        background: #6b4d41;
-    }
-    footer{
+
+        .btn_cad:hover {
+            background: #6b4d41;
+        }
+
+    footer {
+        margin-top: 3%;
         display: flex;
     }
-    .verFunc{
+
+    .verFunc {
         font: bold 12pt Candara;
         color: #6b4d41;
         width: 20%;
@@ -93,26 +111,25 @@
         @Html.AntiForgeryToken()
     <form>
         <h2>CADASTRAR FUNCIONÁRIO</h2>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="first_main">
             <div class="form-group">
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.nm_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Nome" } })
-                    @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger", @style= "padding-right: 80px;" })
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.cg_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Cargo" } })
-                    @Html.ValidationMessageFor(model => model.cg_func, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.cg_func, "", new { @class = "text-danger", @style = "padding-right: 65px;" })
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.email_func, new { htmlAttributes = new { @class = "campo", @placeholder = "E-mail" } })
-                    @Html.ValidationMessageFor(model => model.email_func, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.email_func, "", new { @class = "text-danger", @style = "padding-right: 135px;" })
                 </div>
             </div>
 
@@ -121,7 +138,7 @@
             <div class="form-group">
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.cpf_func, new { htmlAttributes = new { @class = "campo", @placeholder = "CPF" } })
-                    @Html.ValidationMessageFor(model => model.cpf_func, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.cpf_func, "", new { @class = "text-danger", @style = "padding-right: 110px;" })
                 </div>
             </div>
 
@@ -135,7 +152,7 @@
             <div class="form-group">
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.tel_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Telefone" } })
-                    @Html.ValidationMessageFor(model => model.tel_func, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(model => model.tel_func, "", new { @class = "text-danger", @style = "padding-right: 70px;" })
                 </div>
             </div>
 
