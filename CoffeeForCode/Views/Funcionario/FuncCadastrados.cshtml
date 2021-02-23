@@ -49,10 +49,36 @@
         border: solid 3px #6b4d41;
         display: inline-flex;
         justify-content: space-between;
-        margin: 3rem 5%;
-        width: 90vw;
+        margin: auto 5%;
+        width: 90%;
         border-radius: 15px;
+        padding: 10px;
     }
+    .abas_func {
+        text-align: center;
+        display:flex;
+        position: absolute;
+        border-radius: 15px;
+        border: solid 3px #ffd500;
+        margin-bottom: 15%;
+        width: 88%;
+
+    }
+    .abas_func > th{
+        justify-content: space-between;
+        font: normal 12pt Comic Sans MS, "sans-serif";
+        color: #6b4d41;
+    }
+    .resul_func {
+        border-bottom:solid 1px #6b4d41;
+        justify-content: space-between;
+        margin: 5% 2%;
+        display: flex;
+    }
+        .resul_func > td {
+            font: normal 10pt Comic Sans MS, "sans-serif";
+            color: #9f4845;
+        }
 </style>
 
 <header>
@@ -64,38 +90,36 @@
 </header>
 <section>
     <table class="table">
-        <tr>
-            <th>
+        <tr class="abas_func" >
+            <th style=" margin-left:1.5%;">
                 @Html.DisplayNameFor(model => model.id_func)
             </th>
-            <th>
+            <th style=" margin-left: 8%;">
                 @Html.DisplayNameFor(model => model.nm_func)
             </th>
-            <th>
+            <th style=" margin-left:13%;">
                 @Html.DisplayNameFor(model => model.cg_func)
             </th>
-            <th>
+            <th style=" margin-left:14%;">
                 @Html.DisplayNameFor(model => model.email_func)
             </th>
-            <th>
+            <th style=" margin-left:10%;">
                 @Html.DisplayNameFor(model => model.cpf_func)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.end_func)
-            </th>
-            <th>
+        
+            <th style=" margin-left:7%;">
                 @Html.DisplayNameFor(model => model.tel_func)
             </th>
-            <th></th>
+            <th style=" margin-left:8%;">Opções</th>
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="resul_func" >
                 <td>
                     @Html.DisplayFor(modelItem => item.id_func)
                 </td>
-                <td>
+                <td >
                     @Html.DisplayFor(modelItem => item.nm_func)
                 </td>
                 <td>
@@ -108,12 +132,9 @@
                     @Html.DisplayFor(modelItem => item.cpf_func)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.end_func)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.tel_func)
                 </td>
-                <td>
+                <td >
                     @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                     @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
