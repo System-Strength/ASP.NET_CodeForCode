@@ -1,0 +1,75 @@
+﻿@model IEnumerable<AppBancoDominio.Funcionario>
+
+@{
+    ViewBag.Title = "FuncCadastrados";
+    Layout = "~/Views/Shared/_CFCfunc.cshtml";
+}
+<style>
+    table{
+        display: flex;
+    }
+</style>
+
+<h2>FuncCadastrados</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_func)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nm_func)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cg_func)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email_func)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpf_func)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.end_func)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel_func)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_func)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nm_func)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cg_func)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email_func)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpf_func)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.end_func)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel_func)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

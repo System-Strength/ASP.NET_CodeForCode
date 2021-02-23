@@ -317,6 +317,7 @@
     <Content Include="Views\Cliente\Confirma.cshtml" />
     <Content Include="Views\Funcionario\VerificaGer.cshtml" />
     <Content Include="Views\Funcionario\CadastrarFunc.cshtml" />
+    <Content Include="Views\Funcionario\FuncCadastrados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

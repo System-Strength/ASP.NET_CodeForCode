@@ -47,5 +47,11 @@ namespace CoffeeForCode.Controllers
             }
             return View(funcionario);
         }
+        public ActionResult FuncCadastrados()
+        {
+            var metodoFuncionario = new FuncionarioDAO();
+            var todosFuncionarios = metodoFuncionario.Listar();
+            return View(todosFuncionarios);
+        }
     }
 }
