@@ -45,6 +45,14 @@
             box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
             text-decoration: none;
         }
+    section {
+        border: solid 3px #6b4d41;
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 3rem 5%;
+        width: 90vw;
+        border-radius: 15px;
+    }
 </style>
 
 <header>
@@ -53,67 +61,65 @@
         <span class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
         <h3>ADICIONAR</h3>
     </a>
-
 </header>
+<section>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id_func)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nm_func)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cg_func)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email_func)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cpf_func)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.end_func)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tel_func)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.id_func)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nm_func)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cg_func)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.email_func)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cpf_func)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.end_func)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tel_func)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_func)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nm_func)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cg_func)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email_func)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cpf_func)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.end_func)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tel_func)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_func)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nm_func)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cg_func)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email_func)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cpf_func)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.end_func)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tel_func)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+</section>
