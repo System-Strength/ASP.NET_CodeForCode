@@ -5,12 +5,56 @@
     Layout = "~/Views/Shared/_CFCfunc.cshtml";
 }
 <style>
-    table{
-        display: flex;
+    header{
+        border: solid 3px #6b4d41;
+        display: inline-flex;
+        justify-content:space-between;
+        margin: 3rem 15%;
+        width: 70vw;
+        border-radius: 15px;
     }
+        header > h2 {
+            font: bold 20pt Comic Sans MS, "sans-serif";
+            color: #6b4d41;
+            margin: auto 10%;
+        }
+    .add_func {
+        justify-content: space-between;
+        border: solid 3px #ffd500;
+        display: flex;
+        margin: 2%;
+        width: 20vw;
+        border-radius: 15px;
+        padding: 10px;
+        cursor: pointer;
+        font: bold 15pt Comic Sans MS, "sans-serif";
+        transition: 0.5s;
+    }
+    .add_func > span > i{
+        color:#9f4845;
+        font-size:40pt;
+        display: flex;
+        margin-left: 30%;
+    }
+        .add_func > h3 {
+            font: bold 15pt Comic Sans MS, "sans-serif";
+            color: #9f4845;
+            margin: auto 10%;
+        }
+        .add_func:hover {
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+            text-decoration: none;
+        }
 </style>
 
-<h2>FuncCadastrados</h2>
+<header>
+    <h2>FUNCIONÁRIOS CADASTRADOS</h2>
+    <a href="CadastrarFunc" class="add_func">
+        <span class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+        <h3>ADICIONAR</h3>
+    </a>
+
+</header>
 
 <p>
     @Html.ActionLink("Create New", "Create")
