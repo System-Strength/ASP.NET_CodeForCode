@@ -144,9 +144,9 @@
                     <div style="display: flex;">@Html.DisplayFor(modelItem => item.tel_func)</div>
                 </td>
                 <td >
-                    @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new  { htmlAttributes = new { @class = "Edit"}}) |
-                    @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Editar", "Edit", new {id=item.id_func}, new  { htmlAttributes = new { @class = "Edit"}}) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.id_func }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.id_func })
                 </td>
             </tr>
         }

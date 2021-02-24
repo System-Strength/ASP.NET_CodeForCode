@@ -53,5 +53,26 @@ namespace CoffeeForCode.Controllers
             var todosFuncionarios = metodoFuncionario.Listar();
             return View(todosFuncionarios);
         }
+        public ActionResult EditarFunc(int id)
+        {
+            var metodoFuncionario = new FuncionarioDAO();
+            var funcionarios = metodoFuncionario.ListarId(id);
+            if (funcionarios == null)
+            {
+                return HttpNotFound();
+            }
+            return View(funcionarios);
+        }
+        [HttpPost]
+        public ActionResult EditarFunc(Funcionario funcionario)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoFuncionario = new FuncionarioDAO();
+                metodoFuncionario.Atualizar(funcionario);
+                return RedirectToAction("FuncCadastrados");
+            }
+            return View(funcionario);
+        }
     }
 }
