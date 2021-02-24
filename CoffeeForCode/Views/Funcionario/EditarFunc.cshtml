@@ -5,9 +5,10 @@
     Layout = "~/Views/Shared/_CFCfunc.cshtml";
 }
 <style>
-    section{
+    section {
         display: flex;
     }
+
     h2 {
         text-align: center;
         display: block;
@@ -15,6 +16,7 @@
         text-transform: uppercase;
         color: #6b4d41;
     }
+
     form {
         display: block;
         width: 60vw;
@@ -32,6 +34,7 @@
         transition: 0.5s;
         box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
     }
+
     .campo {
         font: bold 15pt Candara;
         display: grid;
@@ -42,6 +45,7 @@
         outline: none;
         margin: 1.3rem 21rem;
     }
+
     .btn_edit {
         margin: auto 13rem;
         cursor: pointer;
@@ -64,7 +68,7 @@
         .btn_edit:hover {
             background: #6b4d41;
         }
-    
+
     .verFunc {
         font: bold 12pt Candara;
         color: #6b4d41;
@@ -73,63 +77,74 @@
         padding-top: 15px;
         margin-left: 5%;
     }
-
 </style>
 <section>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
-    <form>
-        <h2>CADASTRAR FUNCIONÁRIO</h2>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <form>
+            <h2>CADASTRAR FUNCIONÁRIO</h2>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nm_func, new { htmlAttributes = new { @class = "campo" } })
-                @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nm_func, new { htmlAttributes = new { @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cg_func, new { htmlAttributes = new { @class = "campo" } })
-                @Html.ValidationMessageFor(model => model.cg_func, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cg_func, new { htmlAttributes = new { @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.cg_func, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.email_func, new { htmlAttributes = new { @class = "campo" } })
-                @Html.ValidationMessageFor(model => model.email_func, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.email_func, new { htmlAttributes = new { @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.email_func, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cpf_func, new { htmlAttributes = new { @class = "campo" } })
-                @Html.ValidationMessageFor(model => model.cpf_func, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cpf_func, new { htmlAttributes = new { @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.cpf_func, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.end_func, new { htmlAttributes = new { @class = "campo" } })
-                @Html.ValidationMessageFor(model => model.end_func, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.end_func, new { htmlAttributes = new { @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.end_func, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tel_func, new { htmlAttributes = new { @class = "campo" } })
-                @Html.ValidationMessageFor(model => model.tel_func, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tel_func, new { htmlAttributes = new { @class = "campo" } })
+                    @Html.ValidationMessageFor(model => model.tel_func, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
             @Html.ActionLink("Ver Funcionários", "FuncCadastrados", "Funcionario", new { @class = "verFunc" })
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="EDITAR" class="btn_edit" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Editar" class="btn_edit" />
+                </div>
             </div>
-     </form>
+        </form>
     }
 </section>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#cpf_func").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
+        })
+        $(document).ready(function () {
+            $("#tel_func").inputmask("mask", { "mask": "(99)9999-99999" });
+        })
+    </script>
+}

@@ -21,13 +21,14 @@ namespace AppBancoDLL
         public void Atualizar(Funcionario funcionario)
         {
             var stratualiza = "";
-            stratualiza += "update tbl_funcionario set ";
+            stratualiza += " update tbl_funcionario set ";
             stratualiza += string.Format(" nm_func = '{0}', ", funcionario.nm_func);
             stratualiza += string.Format(" cg_func = '{0}', ", funcionario.cg_func);
-            stratualiza += string.Format(" email_func = '{0}', ", funcionario.cg_func);
-            stratualiza += string.Format(" cpf_func = '{0}' ", funcionario.cpf_func.ToString().Replace(".", string.Empty).Replace("-", string.Empty));
+            stratualiza += string.Format(" email_func = '{0}', ", funcionario.email_func);
+            stratualiza += string.Format(" cpf_func = '{0}', ", funcionario.cpf_func.ToString().Replace(".", string.Empty).Replace("-", string.Empty));
             stratualiza += string.Format(" end_func = '{0}', ", funcionario.end_func);
-            stratualiza += string.Format(" tel_func = '{0}', ", funcionario.tel_func);
+            stratualiza += string.Format(" tel_func = '{0}'", funcionario.tel_func);
+            stratualiza += string.Format(" Where id_func = {0};", funcionario.id_func);
 
             using (db = new Banco())
             {
