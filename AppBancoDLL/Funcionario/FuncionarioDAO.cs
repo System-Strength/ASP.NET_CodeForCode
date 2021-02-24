@@ -79,6 +79,7 @@ namespace AppBancoDLL
             {
                 var TempFuncionario = new Funcionario()
                 {
+                    id_func = int.Parse(retorno["id_func"].ToString()),
                     nm_func = retorno["nm_func"].ToString(),
                     cg_func = retorno["cg_func"].ToString(),
                     email_func = retorno["email_func"].ToString(),

@@ -57,11 +57,9 @@
     .abas_func {
         text-align: center;
         display:flex;
-        position: absolute;
         border-radius: 15px;
         border: solid 3px #ffd500;
-        margin-bottom: 50%;
-        width: 88%;
+        width: 100%;
 
     }
     .abas_func > th{
@@ -71,14 +69,22 @@
 
     }
     .resul_func {
+        justify-content: center;
+        align-items:center;
+        margin: auto 2rem;
         border-bottom:solid 1px #6b4d41;
         justify-content: space-between;
-        margin: 3.5% 2%;
         display: flex;
+        
     }
         .resul_func > td {
-            font: normal 10pt Comic Sans MS, "sans-serif";
+            flex-direction: column;
+            margin: auto 1%;
+            font: normal 1em Comic Sans MS, "sans-serif";
             color: #9f4845;
+        }
+        .Edit{
+            color:#ffd500;
         }
 </style>
 
@@ -93,7 +99,7 @@
     <table class="table">
         <tr class="abas_func" >
             <th style=" margin-left:1.5%;">
-                @Html.DisplayNameFor(model => model.id_func)
+                <div>@Html.DisplayNameFor(model => model.id_func)</div>
             </th>
             <th style=" margin-left: 8%;">
                 @Html.DisplayNameFor(model => model.nm_func)
@@ -118,27 +124,29 @@
         {
             <tr class="resul_func" >
                 <td>
-                    @Html.DisplayFor(modelItem => item.id_func)
+                    <div style="display: flex;">@Html.DisplayFor(modelItem => item.id_func)</div>
                 </td>
                 <td >
-                    @Html.DisplayFor(modelItem => item.nm_func)
+                    <div style="display: flex;">@Html.DisplayFor(modelItem => item.nm_func)</div>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.cg_func)
+                    <div style="display: flex;">@Html.DisplayFor(modelItem => item.cg_func)</div>
+                    
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.email_func)
+                    <div style="display: flex;">@Html.DisplayFor(modelItem => item.email_func)</div>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.cpf_func)
+                    <div style="display: flex;">@Html.DisplayFor(modelItem => item.cpf_func)</div>
+                    
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.tel_func)
+                    <div style="display: flex;">@Html.DisplayFor(modelItem => item.tel_func)</div>
                 </td>
                 <td >
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }, new  { htmlAttributes = new { @class = "Edit"}}) |
+                    @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
                 </td>
             </tr>
         }
