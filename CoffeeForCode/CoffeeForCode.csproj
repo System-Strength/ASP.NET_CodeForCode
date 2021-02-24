@@ -318,6 +318,7 @@
     <Content Include="Views\Funcionario\VerificaGer.cshtml" />
     <Content Include="Views\Funcionario\CadastrarFunc.cshtml" />
     <Content Include="Views\Funcionario\FuncCadastrados.cshtml" />
+    <Content Include="Views\Funcionario\EditarFunc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
