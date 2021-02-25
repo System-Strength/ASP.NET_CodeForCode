@@ -83,8 +83,18 @@
             font: normal 1em Comic Sans MS, "sans-serif";
             color: #9f4845;
         }
-        .Edit{
-            color:#ffd500;
+    .editar{
+        color: #ffd500;
+    }
+    .delete {
+        color: #D94E4A;
+    }
+    .link {
+        font: normal 1em Comic Sans MS, "sans-serif";
+        text-decoration: none;
+    }
+        .link:hover {
+            text-decoration: none;
         }
 </style>
 
@@ -107,10 +117,10 @@
             <th style=" margin-left:13%;">
                 @Html.DisplayNameFor(model => model.cg_func)
             </th>
-            <th style=" margin-left:14%;">
+            <th style=" margin-left:10%;">
                 @Html.DisplayNameFor(model => model.email_func)
             </th>
-            <th style=" margin-left:10%;">
+            <th style=" margin-left:11%;">
                 @Html.DisplayNameFor(model => model.cpf_func)
             </th>
         
@@ -143,10 +153,10 @@
                 <td>
                     <div style="display: flex;">@Html.DisplayFor(modelItem => item.tel_func)</div>
                 </td>
-                <td >
-                    @Html.ActionLink("Editar", "EditarFunc", new {id=item.id_func}) |
-                    @Html.ActionLink("Detalhes", "Details", new { id = item.id_func }) |
-                    @Html.ActionLink("Excluir", "Delete", new { id = item.id_func })
+                <td>
+                    @Html.ActionLink("Editar", "EditarFunc", new { id = item.id_func }, new { @class = "editar link" }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.id_func }, new { @class="detalhes link"}) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.id_func }, new { @class = "delete link" })
                 </td>
             </tr>
         }
