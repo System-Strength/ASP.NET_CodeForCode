@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "CadastrarFunc";
     Layout = "~/Views/Shared/_CFCfunc.cshtml";
-    
+
 }
 <style>
     section {
@@ -109,60 +109,70 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-    <form>
-        <h2>CADASTRAR FUNCIONÁRIO</h2>
-        <div class="first_main">
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.nm_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Nome" } })
-                    @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger", @style= "padding-right: 80px;" })
+        <form>
+            <h2>CADASTRAR FUNCIONÁRIO</h2>
+            <div class="first_main">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nm_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Nome" } })
+                        @Html.ValidationMessageFor(model => model.nm_func, "", new { @class = "text-danger", @style = "padding-right: 80px;" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.cg_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Cargo" } })
-                    @Html.ValidationMessageFor(model => model.cg_func, "", new { @class = "text-danger", @style = "padding-right: 65px;" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cg_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Cargo" } })
+                        @Html.ValidationMessageFor(model => model.cg_func, "", new { @class = "text-danger", @style = "padding-right: 65px;" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.email_func, new { htmlAttributes = new { @class = "campo", @placeholder = "E-mail" } })
-                    @Html.ValidationMessageFor(model => model.email_func, "", new { @class = "text-danger", @style = "padding-right: 135px;" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email_func, new { htmlAttributes = new { @class = "campo", @placeholder = "E-mail" } })
+                        @Html.ValidationMessageFor(model => model.email_func, "", new { @class = "text-danger", @style = "padding-right: 135px;" })
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="second_main">
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.cpf_func, new { htmlAttributes = new { @class = "campo", @placeholder = "CPF" } })
-                    @Html.ValidationMessageFor(model => model.cpf_func, "", new { @class = "text-danger", @style = "padding-right: 110px;" })
+            </div>
+            <div class="second_main">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cpf_func, new { htmlAttributes = new { @class = "campo", @placeholder = "CPF" } })
+                        @Html.ValidationMessageFor(model => model.cpf_func, "", new { @class = "text-danger", @style = "padding-right: 110px;" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.end_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Endereço" } })
-                    @Html.ValidationMessageFor(model => model.end_func, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.end_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Endereço" } })
+                        @Html.ValidationMessageFor(model => model.end_func, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.tel_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Telefone" } })
-                    @Html.ValidationMessageFor(model => model.tel_func, "", new { @class = "text-danger", @style = "padding-right: 70px;" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.tel_func, new { htmlAttributes = new { @class = "campo", @placeholder = "Telefone" } })
+                        @Html.ValidationMessageFor(model => model.tel_func, "", new { @class = "text-danger", @style = "padding-right: 70px;" })
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <footer>
-         @Html.ActionLink("Ver Funcionários", "FuncCadastrados", "Funcionario", new { @class = "verFunc" } )
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn_cad" />
             </div>
-        </footer>
-    </form>
+            <footer>
+                @Html.ActionLink("Ver Funcionários", "FuncCadastrados", "Funcionario", new { @class = "verFunc" })
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Cadastrar" class="btn_cad" />
+                </div>
+            </footer>
+        </form>
     }
 </section>
+@section Scripts{
+<script>
+        $(document).ready(function () {
+            $("#cpf_func").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
+        })
+        $(document).ready(function () {
+            $("#tel_func").inputmask("mask", { "mask": "(99)9999-99999" });
+        })
+</script>
+}
