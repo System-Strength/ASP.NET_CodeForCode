@@ -319,6 +319,7 @@
     <Content Include="Views\Funcionario\CadastrarFunc.cshtml" />
     <Content Include="Views\Funcionario\FuncCadastrados.cshtml" />
     <Content Include="Views\Funcionario\EditarFunc.cshtml" />
+    <Content Include="Views\Funcionario\DetalhesFunc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

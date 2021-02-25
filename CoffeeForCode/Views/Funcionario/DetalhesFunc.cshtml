@@ -1,0 +1,75 @@
+﻿@model AppBancoDominio.Funcionario
+
+@{
+    ViewBag.Title = "DetalhesFunc";
+    Layout = "~/Views/Shared/_CFCfunc.cshtml";
+}
+
+<h2>DetalhesFunc</h2>
+
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_func)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_func)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nm_func)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nm_func)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cg_func)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cg_func)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email_func)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email_func)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf_func)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf_func)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.end_func)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.end_func)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel_func)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel_func)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

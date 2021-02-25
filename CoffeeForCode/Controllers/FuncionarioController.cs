@@ -74,5 +74,15 @@ namespace CoffeeForCode.Controllers
             }
             return View(funcionario);
         }
+        public ActionResult DetalhesFunc(int id)
+        {
+            var metodoFuncionario = new FuncionarioDAO();
+            var funcionario = metodoFuncionario.ListarId(id);
+            if (funcionario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(funcionario);
+        }
     }
 }
