@@ -84,5 +84,25 @@ namespace CoffeeForCode.Controllers
             }
             return View(funcionario);
         }
+        public ActionResult ExcluirFunc(int id)
+        {
+            var metodoFuncionario = new FuncionarioDAO();
+            var funcionario = metodoFuncionario.ListarId(id);
+
+            if (funcionario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(funcionario);
+        }
+        [HttpPost, ActionName("ExcluirFunc")]
+        public ActionResult ExcluirFuncConf(int id)
+        {
+            var metodoFuncionario = new FuncionarioDAO();
+            Funcionario funcionario = new Funcionario();
+            funcionario.id_func = id;
+            metodoFuncionario.Excluir(funcionario);
+            return RedirectToAction("FuncCadastrados");
+        }
     }
 }

@@ -1,0 +1,78 @@
+﻿@model AppBancoDominio.Funcionario
+
+@{
+    ViewBag.Title = "ExcluirFunc";
+    Layout = "~/Views/Shared/_CFCfunc.cshtml";
+}
+
+<header>
+    <h3>Você quer mesmo deletar esse Funcionário?</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.id_func)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.id_func)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nm_func)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nm_func)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cg_func)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cg_func)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email_func)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email_func)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cpf_func)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cpf_func)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.end_func)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.end_func)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tel_func)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tel_func)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+</header>
