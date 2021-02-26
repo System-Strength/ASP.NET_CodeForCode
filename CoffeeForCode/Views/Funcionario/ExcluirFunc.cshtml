@@ -5,62 +5,173 @@
     Layout = "~/Views/Shared/_CFCfunc.cshtml";
 }
 
+<style>
+    header {
+        display: inline-flex;
+        padding-top: 3%;
+        padding-left: 8%;
+    }
+
+    .container {
+        display: block;
+        width: 70vw;
+        height: 82vh;
+        margin-top: 2%;
+        margin-left: 22%;
+        position: relative;
+        background: #fff;
+        border: solid 6px #fff6e5;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        text-align: center;
+        overflow: hidden;
+        transition: 0.5s;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+    }
+
+    h2 {
+        font: bold 20pt Comic Sans MS, "sans-serif";
+        color: #6b4d41;
+        margin: 2% 10%;
+        display: block;
+    }
+
+    .dl-horizontal {
+        display: block;
+        margin: 5% 8%;
+        width: 120%;
+    }
+
+    dt {
+        margin-top: 1.5%;
+        font: bold 12pt Comic Sans MS;
+        color: #6b4d41;
+        text-align: center;
+    }
+
+    dd {
+        color: rgba(0, 0, 0, .5);
+        text-align: start;
+        font: normal 12pt Comic Sans MS;
+        padding-right: 250px;
+    }
+
+    .campo {
+        cursor: not-allowed;
+        font: bold 15pt Candara;
+        display: grid;
+        padding: 6px;
+        width: 25vw;
+        border-radius: 5px;
+        border-bottom: solid 4px #FFD500;
+        outline: none;
+        margin: 0.8rem 21rem;
+    }
+
+    .btn_del {
+        margin: 1rem 1rem;
+        cursor: pointer;
+        width: 16vw;
+        display: inline-flex;
+        padding: 15px;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 25px;
+        border: none;
+        color: #fff;
+        font: bold 14pt Candara;
+        text-transform: uppercase;
+        background-color: #ff2e2e;
+        color: #fff;
+        transition: 0.5s;
+    }
+    .btn_det {
+        margin: 0.5rem 0rem;
+        cursor: pointer;
+        width: 16vw;
+        display: inline-flex;
+        padding: 15px;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 25px;
+        border: none;
+        color: #fff;
+        font: bold 14pt Candara;
+        text-transform: uppercase;
+        background-color: #6b4d41;
+        color: #fff;
+        transition: 0.5s;
+    }
+    .btn_del:hover{
+        background: #f81515;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+</style>
+
+
 <header>
-    <h3>Você quer mesmo deletar esse Funcionário?</h3>
+    <div class="container">
+        <h3>Você quer mesmo deletar esse Funcionário?</h3>
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.id_func)
+                @Html.DisplayNameFor(model => model.id_func):
             </dt>
 
-            <dd>
+            <dd class="campo">
                 @Html.DisplayFor(model => model.id_func)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.nm_func)
+                @Html.DisplayNameFor(model => model.nm_func):
             </dt>
 
-            <dd>
+            <dd class="campo">
                 @Html.DisplayFor(model => model.nm_func)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.cg_func)
+                @Html.DisplayNameFor(model => model.cg_func):
             </dt>
 
-            <dd>
+            <dd class="campo">
                 @Html.DisplayFor(model => model.cg_func)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.email_func)
+                @Html.DisplayNameFor(model => model.email_func):
             </dt>
 
-            <dd>
+            <dd class="campo">
                 @Html.DisplayFor(model => model.email_func)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.cpf_func)
+                @Html.DisplayNameFor(model => model.cpf_func):
             </dt>
 
-            <dd>
+            <dd class="campo">
                 @Html.DisplayFor(model => model.cpf_func)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.end_func)
+                @Html.DisplayNameFor(model => model.end_func):
             </dt>
 
-            <dd>
+            <dd class="campo">
                 @Html.DisplayFor(model => model.end_func)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.tel_func)
+                @Html.DisplayNameFor(model => model.tel_func):
             </dt>
 
-            <dd>
+            <dd class="campo">
                 @Html.DisplayFor(model => model.tel_func)
             </dd>
 
@@ -70,9 +181,11 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
+    <div class="form-actions no-color">
+        @Html.ActionLink("Voltar para Lista", "FuncCadastrados", "Inicio", new { @class = "btn_det" })
+        <input type="submit" value="Delete" class="btn_del" /> 
+        @Html.ActionLink("Editar", "EditarFunc", new { id = Model.id_func }, new { @class = "btn_det" })
+    </div>
         }
+    </div>
 </header>
