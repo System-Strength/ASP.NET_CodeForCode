@@ -8,6 +8,8 @@
 <style>
     header{
         display: inline-flex;
+        padding-top:3%;
+        padding-left:8%;
     }
     .container {
         display: block;
@@ -51,6 +53,7 @@
         padding-right:250px;
     }
     .campo {
+        cursor:not-allowed; 
         font: bold 15pt Candara;
         display: grid;
         padding: 6px;
@@ -60,7 +63,29 @@
         outline: none;
         margin: 0.8rem 21rem;
     }
-    
+    .btn_det {
+        margin: 1rem 1rem;
+        cursor: pointer;
+        width: 16vw;
+        display: inline-flex;
+        padding: 15px;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 25px;
+        border: none;
+        color: #fff;
+        font: bold 14pt Candara;
+        text-transform: uppercase;
+        background-color: #b78278;
+        color: #fff;
+        transition: 0.5s;
+    }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
 
 </style >
 
@@ -123,14 +148,11 @@
             <dd class="campo">
                 @Html.DisplayFor(model => model.tel_func)
             </dd>
-
+            <div style="padding-right:28%;">
+                @Html.ActionLink("Voltar para Lista", "FuncCadastrados", "Inicio", new { @class = "btn_det" })
+                @Html.ActionLink("Editar", "EditarFunc", new { id = Model.id_func }, new { @class = "btn_det" })
+            </div>
         </dl>
-        <a href=""><input type="submit" /></a>
-        <a href=""><input type="submit" /></a>
+      
     </div>
 </header>
-
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
