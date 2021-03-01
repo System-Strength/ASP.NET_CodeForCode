@@ -5,52 +5,151 @@
     Layout = "~/Views/Shared/_CFCfunc.cshtml";
 }
 
-<h2>ClientesCadastrados</h2>
+<style>
+    header {
+        border: solid 3px #6b4d41;
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 3rem 15%;
+        width: 70vw;
+        border-radius: 15px;
+    }
+
+        header > h2 {
+            font: bold 20pt Comic Sans MS, "sans-serif";
+            color: #6b4d41;
+            margin: auto 10%;
+        }
+
+    .add_func {
+        justify-content: space-between;
+        border: solid 3px #ffd500;
+        display: flex;
+        margin: 2%;
+        width: 25vw;
+        border-radius: 15px;
+        padding: 10px;
+        cursor: pointer;
+        font: bold 15pt Comic Sans MS, "sans-serif";
+        transition: 0.5s;
+    }
+
+        .add_func > span > i {
+            color: #9f4845;
+            font-size: 30pt;
+            display: flex;
+            margin-left:30%;
+        }
+    .busca_cli {
+        border: none;
+        border-bottom: solid 3px #9f4845;
+        width: 80%;
+        font: normal 14pt Comic Sans MS;
+        color: #6b4d41;
+        padding-left:2%;
+    }
+    .busca_cli::placeholder{
+        font: normal 14pt Comic Sans MS;
+        color: #6b4d41;
+        opacity: 50%;
+    }
+
+        .add_func:hover {
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+            text-decoration: none;
+        }
+
+    section {
+        border: solid 3px #6b4d41;
+        display: inline-flex;
+        justify-content: space-between;
+        margin: auto 6%;
+        width: 85%;
+        border-radius: 15px;
+        padding: 10px;
+    }
+    .table{
+        display:grid;
+        margin-left:10%;
+    }
+        .abas_func > th {
+            width: 10em;
+            font: normal 16pt Comic Sans MS, "sans-serif";
+            color: #6b4d41;
+            text-align: center;
+            align-items: center;
+            border-bottom: none;
+        }
 
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.id_usu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.user_login)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.rg_usu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.senha_login)
-        </th>
-        <th></th>
-    </tr>
+    .resul_func > td{
+        font: normal 1.3em Comic Sans MS, "sans-serif";
+        color: #9f4845;
+        text-align: center;
+        border-bottom: solid 1px rgba(107, 77, 65, 0.57);
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_usu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.user_login)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rg_usu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.senha_login)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.confirmaSenha)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    .editar {
+        color: #ffd500;
+    }
 
-</table>
+    .delete {
+        color: #D94E4A;
+    }
+
+    .link {
+        font: normal 1em Comic Sans MS, "sans-serif";
+        text-decoration: none;
+    }
+
+        .link:hover {
+            text-decoration: none;
+        }
+</style>
+
+<header>
+    <h2>CLIENTES CADASTRADOS</h2>
+    <a class="add_func">
+        <span class="icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+        <input type="search" class="busca_cli" placeholder="Buscar Cliente"/>
+    </a>
+</header>
+
+<section>
+    <table class="table">
+        <tr class="abas_func">
+            <th>
+                @Html.DisplayNameFor(model => model.id_usu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user_login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rg_usu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.senha_login)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="resul_func">
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_usu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rg_usu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.senha_login)
+                </td>
+            </tr>
+        }
+
+    </table>
+</section>
