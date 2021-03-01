@@ -321,6 +321,7 @@
     <Content Include="Views\Funcionario\EditarFunc.cshtml" />
     <Content Include="Views\Funcionario\DetalhesFunc.cshtml" />
     <Content Include="Views\Funcionario\ExcluirFunc.cshtml" />
+    <Content Include="Views\Funcionario\ClientesCadastrados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
