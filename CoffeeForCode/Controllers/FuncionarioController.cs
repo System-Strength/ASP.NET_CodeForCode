@@ -104,5 +104,11 @@ namespace CoffeeForCode.Controllers
             metodoFuncionario.Excluir(funcionario);
             return RedirectToAction("FuncCadastrados");
         }
+        public ActionResult ClientesCadastrados()
+        {
+            var metodoCliente = new CriaContaDAO();
+            var todosClientes = metodoCliente.Listar();
+            return View(todosClientes);
+        }
     }
 }
