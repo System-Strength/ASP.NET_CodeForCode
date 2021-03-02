@@ -322,6 +322,7 @@
     <Content Include="Views\Funcionario\DetalhesFunc.cshtml" />
     <Content Include="Views\Funcionario\ExcluirFunc.cshtml" />
     <Content Include="Views\Funcionario\ClientesCadastrados.cshtml" />
+    <Content Include="Views\Funcionario\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
