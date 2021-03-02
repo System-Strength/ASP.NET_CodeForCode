@@ -110,5 +110,11 @@ namespace CoffeeForCode.Controllers
             var todosClientes = metodoCliente.Listar();
             return View(todosClientes);
         }
+
+
+        public ActionResult Info()
+        {
+            return View();
+        }
     }
 }
