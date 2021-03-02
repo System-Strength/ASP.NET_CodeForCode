@@ -58,23 +58,5 @@ namespace CoffeeForCode.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Esqueceu_Senha(Conta conta)
-        {
-            var metodoUsuario = new CriaContaDAO();
-            var db = new Banco();
-            var strQuery = "select * from tbl_conta";
-            var retorno = db.retornaComando(strQuery);
-            while (retorno.Read())
-            {
-                var rg_usu = retorno["rg_usu"].ToString().Replace(".", string.Empty).Replace("-", string.Empty);
-                if (rg_usu == conta.rg_usu)
-                {
-                    metodoUsuario.Atualizar(conta);
-                    return RedirectToAction("Login_Home", "Login");
-                }
-            }                                    
-            return View(conta);
-        }
     }
 }
