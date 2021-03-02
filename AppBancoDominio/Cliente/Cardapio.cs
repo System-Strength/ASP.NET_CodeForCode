@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace AppBancoDominio
 {
@@ -13,7 +14,9 @@ namespace AppBancoDominio
         [DisplayName("Código do produto:")]
         public int cd_prod { get; set; }
 
-        //[DisplayName("Imagem:")]
+        [DisplayName("Imagem:")]
+        [DataType(DataType.Upload)]
+        public HttpPostedFileBase img_prod { get; set; }
 
         [DisplayName("Nome:")]
         [Required(ErrorMessage = "Obrigatório digitar o nome do produto!")]
@@ -22,5 +25,12 @@ namespace AppBancoDominio
         [DisplayName("Preço:")]
         [Required(ErrorMessage = "Digite apenas o número, sem vírgula ou ponto!")]
         public decimal preco_prod { get; set; }
+
+        [DisplayName("Quantidade:")]
+        public int qntd_prod { get; set; }
+
+        [DisplayName("Categoria:")]
+        [Required(ErrorMessage = "Obrigatório informar a categoria do produto!")]
+        public string cat_prod { get; set; }
     }
 }
