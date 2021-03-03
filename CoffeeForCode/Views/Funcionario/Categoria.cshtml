@@ -4,51 +4,108 @@
     Layout = "~/Views/Shared/_CFCfunc.cshtml";
 }
 
+<style>
+    body{
+        display: flex;
+    }
+    section{
+        /*background: red;*/
+        margin: auto 10%;
+        width:110%;
+        justify-content:center;
+    }
+    section h3{
 
+    }
+    h2 {
+        padding-top:2%;
+        text-align: center;
+        font: bold 22pt Comic Sans MS;
+        text-transform: uppercase;
+        color: #6b4d41;
+    }
+    h3{
+        font: bold 15pt Comic Sans MS;
+        padding-top: 3%;
+        display: block;
+    }
+    main{
+        display: flex;
+        margin:5% auto;
+    }
+    .box {
+        width: 80%;
+        margin:1em 5rem;
+        display:inline-flex;
+        background-color: white;
+        border: solid 5px #fff6e5;
+        border-radius: 20px;
+        transition: 0.5s;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, .5);
+        cursor: pointer;
+    }
 
-<section>
-    <div><h2>Cadastrar Produto</h2></div>
-    <div><h3>ESCOLHA UMA CATEGORIA:</h3></div>
-    <main>
-        <div class="col_one">
-            <a href="Cardapio_Cafe" class="container_box">
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/coffee.png" />
-                    <h3>Café</h3>
-                </div>
-            </a>
-            <a href="Cardapio_Choco" class="container_box">
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/chocolate.png" />
-                    <h3>Chocolate</h3>
-                </div>
-            </a>
-            <a href="Cardapio_MilkShake" class="container_box">
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/milkshake.png" />
-                    <h3>MilkShake</h3>
-                </div>
-            </a>
-        </div>
-        <div class="col_two">
-            <a href="Cardapio_Sanduiche" class="container_box">
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/sandwich.png" />
-                    <h3>Sanduíche</h3>
-                </div>
-            </a>
-            <a href="Cardapio_Doces" class="container_box">
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/cookies.png" />
-                    <h3>Doces</h3>
-                </div>
-            </a>
-            <a href="Cardapio_Burguer" class="container_box">
-                <div class="box">
-                    <img src="~/fonts/Home_Cliente/Cardapio/burger.png" />
-                    <h3>Hambúrguer</h3>
-                </div>
-            </a>
-        </div>
-    </main>
-</section>
+        .box:hover {
+            border: solid 5px #9f4845;
+        }
+        .box img {
+            margin: auto 1rem;
+             width:4em;
+        }
+    .box h3 {
+        position: relative;
+        margin-bottom: 15px;
+        text-align: center;
+        font: bold 18pt Candara;
+        color: #9f4845;
+    }
+</style>
+<body>
+    <section>
+        <h2>Cadastrar Produto</h2>
+        <h3>ESCOLHA UMA CATEGORIA:</h3>
+        <main>
+            <div class="col_one">
+                <a href="Cardapio_Cafe" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/coffee.png" />
+                        <h3>Café</h3>
+                    </div>
+                </a>
+                <a href="Cardapio_Choco" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/chocolate.png" />
+                        <h3>Chocolate</h3>
+                    </div>
+                </a>
+                <a href="Cardapio_MilkShake" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/milkshake.png" />
+                        <h3>MilkShake</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col_two">
+                <a href="Cardapio_Sanduiche" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/sandwich.png" />
+                        <h3>Sanduíche</h3>
+                    </div>
+                </a>
+                <a href="Cardapio_Doces" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/cookies.png" />
+                        <h3>Doces</h3>
+                    </div>
+                </a>
+                <a href="Cardapio_Burguer" class="container_box">
+                    <div class="box">
+                        <img src="~/fonts/Home_Cliente/Cardapio/burger.png" />
+                        <h3>Hambúrguer</h3>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </section>
+
+</body>
