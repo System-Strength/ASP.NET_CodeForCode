@@ -110,6 +110,13 @@ namespace CoffeeForCode.Controllers
             var todosClientes = metodoCliente.Listar();
             return View(todosClientes);
         }
+        public ActionResult Categoria()
+        {
+            var metodoCategoria = new CategoriaDAO();
+            var todasCategorias = metodoCategoria.Listar();
+            return View(todasCategorias);
+        }
+
 
 
         public ActionResult Info()
