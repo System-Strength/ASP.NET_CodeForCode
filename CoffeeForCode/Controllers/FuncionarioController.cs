@@ -112,9 +112,7 @@ namespace CoffeeForCode.Controllers
         }
         public ActionResult Categoria()
         {
-            var metodoCategoria = new CategoriaDAO();
-            var todasCategorias = metodoCategoria.Listar();
-            return View(todasCategorias);
+            return View();
         }
 
 

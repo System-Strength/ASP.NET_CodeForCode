@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente\ComprasDAO.cs" />
+    <Compile Include="Funcionario\CategoriaDAO.cs" />
     <Compile Include="Funcionario\FuncionarioDAO.cs" />
     <Compile Include="Funcionario\GerenteDAO.cs" />
     <Compile Include="Login\CriaContaDAO.cs" />
