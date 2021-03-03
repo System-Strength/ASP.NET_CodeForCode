@@ -16,7 +16,7 @@ namespace AppBancoDominio
 
         [DisplayName("Imagem:")]
         [DataType(DataType.Upload)]
-        public HttpPostedFileBase img_prod { get; set; }
+        public byte[] img_prod { get; set; }
 
         [DisplayName("Nome:")]
         [Required(ErrorMessage = "Obrigatório digitar o nome do produto!")]

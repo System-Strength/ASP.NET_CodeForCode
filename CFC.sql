@@ -8,6 +8,21 @@ create table tbl_conta(
     rg_usu varchar(12) not null,
     senha_login varchar(14) not null
 );
+
+create table tbl_categoria(
+	cd_cat int primary key auto_increment,
+    nm_cat varchar(50) not null
+);
+
+insert into tbl_categoria (nm_cat) values ("Café");
+insert into tbl_categoria (nm_cat) values ("Chocolate");
+insert into tbl_categoria (nm_cat) values ("MilkShake");
+insert into tbl_categoria (nm_cat) values ("Sanduíche");
+insert into tbl_categoria (nm_cat) values ("Cookies");
+insert into tbl_categoria (nm_cat) values ("Hambúrguer");
+
+select * from tbl_categoria;
+
 create table tbl_cardapio(
 	cd_prod int primary key auto_increment,
     img_prod mediumblob not null,
@@ -19,6 +34,8 @@ create table tbl_cardapio(
 );
 
 insert into tbl_cardapio (nm_prod, preco_prod, cat_prod, qntd_prod, img_prod) values ( "Expresso", "5.00", "Café", "1", "/expresso.jpg");
+
+select * from tbl_cardapio;	
 
 create table tbl_compra(
 	cd_compra int primary key auto_increment,
