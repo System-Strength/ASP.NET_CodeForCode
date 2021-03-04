@@ -1,11 +1,17 @@
-﻿using AppBancoDLL;
+﻿using AppBancoADO;
+using AppBancoDLL;
 using AppBancoDominio;
+using MySql.Data.MySqlClient;
 using System.Web.Mvc;
 
 namespace CoffeeForCode.Controllers
 {
     public class FuncionarioController : Controller
     {
+        Banco con = new Banco();
+        Conta conta = new Conta();
+        CriaContaDAO criaConta = new CriaContaDAO();
+
         // GET: Funcionario
         public ActionResult Home()
         {
@@ -104,11 +110,42 @@ namespace CoffeeForCode.Controllers
             metodoFuncionario.Excluir(funcionario);
             return RedirectToAction("FuncCadastrados");
         }
+        MySqlDataReader dataReaderRG;
+        public void buscarCliente(Conta conta)
+        {
+            MySqlCommand cmd = new MySqlCommand("select * from tbl_conta where rg_usu = @rg_usu", con.MyConectarBD());
+            cmd.Parameters.AddWithValue("@rg_usu", conta.rg_usu);
+            dataReaderRG = cmd.ExecuteReader();
+
+            while (dataReaderRG.Read())
+            {
+                conta.user_login = dataReaderRG[1].ToString();
+                conta.senha_login = dataReaderRG[2].ToString();
+                conta.rg_usu = dataReaderRG[3].ToString();
+            }
+
+            con.MyDesConectarBD();
+
+        }
         public ActionResult ClientesCadastrados(string btn, FormCollection frm)
         {
+            if (btn == "Buscar")
+            {
+                conta.rg_usu = frm["txtRg"];
+                buscarCliente(conta);
+                ViewBag.user_login = conta.user_login;
+                ViewBag.senha_login = conta.senha_login;
+                ViewBag.rg_usu = conta.rg_usu;
+                return View();
+            }
+
             var metodoCliente = new CriaContaDAO();
             var todosClientes = metodoCliente.Listar();
+
             return View(todosClientes);
+            
+            
+
         }
         public ActionResult Categoria()
         {

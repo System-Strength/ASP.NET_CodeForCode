@@ -7,6 +7,7 @@ namespace AppBancoADO
     public class Banco : IDisposable
     {
         private readonly MySqlConnection conexao;
+        public static string msg;
         public Banco()
         {
             conexao = new MySqlConnection(ConfigurationManager.ConnectionStrings["conexao"].ConnectionString);
@@ -31,6 +32,30 @@ namespace AppBancoADO
         {
             if (conexao.State == System.Data.ConnectionState.Open)
                 conexao.Close();
+        }
+        public MySqlConnection MyConectarBD()
+        {
+            try
+            {
+                conexao.Open();
+            }
+            catch (Exception erro)
+            {
+                msg = "Ocorreu um erro ao se conectar" + erro.Message;
+            }
+            return conexao;
+        }
+        public MySqlConnection MyDesConectarBD()
+        {
+            try
+            {
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                msg = "Ocorreu um erro ao se conectar" + erro.Message;
+            }
+            return conexao;
         }
     }
 }
