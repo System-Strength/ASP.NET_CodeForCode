@@ -324,6 +324,7 @@
     <Content Include="Views\Funcionario\ClientesCadastrados.cshtml" />
     <Content Include="Views\Funcionario\Info.cshtml" />
     <Content Include="Views\Funcionario\Categoria.cshtml" />
+    <Content Include="Views\Funcionario\BuscaCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
