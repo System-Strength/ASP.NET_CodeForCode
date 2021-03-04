@@ -119,33 +119,38 @@ namespace CoffeeForCode.Controllers
 
             while (dataReaderRG.Read())
             {
-                conta.user_login = dataReaderRG[1].ToString();
-                conta.senha_login = dataReaderRG[2].ToString();
+                conta.id_usu = int.Parse(dataReaderRG[1].ToString());
+                conta.user_login = dataReaderRG[2].ToString();
                 conta.rg_usu = dataReaderRG[3].ToString();
+                conta.senha_login = dataReaderRG[4].ToString();
             }
 
             con.MyDesConectarBD();
 
         }
-        public ActionResult ClientesCadastrados(string btn, FormCollection frm)
+        public ActionResult ClientesCadastrados()
+        {
+            
+            var metodoCliente = new CriaContaDAO();
+            var todosClientes = metodoCliente.Listar();
+            return View(todosClientes);
+            
+        }
+
+        public ActionResult BuscaCliente(string btn, FormCollection frm)
         {
             if (btn == "Buscar")
             {
                 conta.rg_usu = frm["txtRg"];
                 buscarCliente(conta);
+                ViewBag.id_usu = conta.id_usu;
                 ViewBag.user_login = conta.user_login;
                 ViewBag.senha_login = conta.senha_login;
                 ViewBag.rg_usu = conta.rg_usu;
                 return View();
             }
 
-            var metodoCliente = new CriaContaDAO();
-            var todosClientes = metodoCliente.Listar();
-
-            return View(todosClientes);
-            
-            
-
+            return View();
         }
         public ActionResult Categoria()
         {
