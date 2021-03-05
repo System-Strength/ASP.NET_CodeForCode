@@ -142,11 +142,26 @@ namespace CoffeeForCode.Controllers
             if (btn == "Buscar")
             {
                 conta.rg_usu = frm["txtRg"];
-                buscarCliente(conta);
-                ViewBag.id_usu = conta.id_usu;
-                ViewBag.user_login = conta.user_login;
-                ViewBag.senha_login = conta.senha_login;
-                ViewBag.rg_usu = conta.rg_usu;
+                if(conta.rg_usu != "")
+                {
+                    buscarCliente(conta);
+                    ViewBag.id_usu = conta.id_usu;
+                    ViewBag.user_login = conta.user_login;
+                    ViewBag.senha_login = conta.senha_login;
+                    ViewBag.rg_usu = conta.rg_usu;
+                }
+                else if (conta.rg_usu == "")
+                {
+                    ViewBag.Msgaviso = "Campo obrigatório!";
+                }
+
+                else if (btn == "Limpar")
+                {
+                    ViewBag.id_usu = "";
+                    ViewBag.user_login = "";
+                    ViewBag.senha_login = "";
+                    ViewBag.rg_usu = "";
+                }
                 return View();
             }
 

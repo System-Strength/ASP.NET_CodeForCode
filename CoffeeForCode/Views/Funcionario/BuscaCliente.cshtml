@@ -7,7 +7,7 @@
 <style>
     section {
         display: inline-flex;
-        margin: 2% 25%;
+        margin: 1% 25%;
         text-align: center;
     }
 
@@ -15,6 +15,15 @@
             font: bold 20pt Comic Sans MS, "sans-serif";
             color: #6b4d41;
             text-transform: uppercase;
+        }
+        .aviso {
+            background:#fff6e5;
+            padding:10px;
+            margin: auto 1%;
+            border-radius: 5px;
+            transition: ease 2s;
+            color: #5E3F34;
+            font: bold 10pt Comic Sans MS;
         }
 
     .container_pesq {
@@ -42,6 +51,15 @@
         padding: 5px;
         border-radius: 5px;
         background-color: #b09081;
+        transition: 0.5s;
+    }
+    .btn_limpar {
+        font: normal 12pt Comic Sans MS, "sans-serif";
+        color: #fff;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #33cef7;
         transition: 0.5s;
     }
         .btn_busca:hover {
@@ -96,17 +114,19 @@
         {
             <h2>Buscar Cliente</h2>
             <div class="container_pesq">
+                <span class="aviso">@ViewBag.Msgaviso <i class="fa fa-arrow-right"></i></span>
                 <input type="search" class="busca_cli" name="txtRG" id="txtRG" placeholder="Informe o RG do Cliente" value="@ViewBag.rg_usu">
                 <input type="submit" value="Buscar" name="btn" id="btn" class="btn_busca">
+                <input type="submit" value="Limpar" name="btn" id="btn" class="btn_limpar">
             </div>
             <div class="container_resul">
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.id_usu" placeholder="ID" disabled/>
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.user_login" placeholder="NOME DE USUÁRIO"  disabled/>
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.rg_usu" placeholder="RG"  disabled/>
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.senha_login" placeholder="SENHA"  disabled/>
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.id_usu" placeholder="ID" disabled />
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.user_login" placeholder="NOME DE USUÁRIO" disabled />
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.rg_usu" placeholder="RG" disabled />
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.senha_login" placeholder="SENHA" disabled />
             </div>
             <div class="footer">
-                @Html.ActionLink("VER CLIENTES", "ClientesCadastrados", "Funcionario", new { @class="btnVerCli"})
+                @Html.ActionLink("VER CLIENTES", "ClientesCadastrados", "Funcionario", new { @class = "btnVerCli" })
             </div>
         }
     </section>
