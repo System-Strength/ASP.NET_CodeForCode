@@ -16,15 +16,18 @@
         @using (Html.BeginForm("BuscaCliente", "Funcionario", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <h2>Buscar Cliente</h2>
-            <div>
-
+            <div class="container_pesq">
+                <input type="search" class="busca_cli" name="txtRG" id="txtRG" placeholder="Buscar Cliente" value="@ViewBag.rg_usu">
                 <input type="submit" value="Buscar" name="btn" id="btn">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="search" class="busca_cli" name="txtRG" id="txtRG" placeholder="Buscar Cliente" value="@ViewBag.rg_usu" />
+            </div>
+            <div class="container_resul">
                 <input type="text" name="txtNome" id="txtNome" value="@ViewBag.id_usu" />
                 <input type="text" name="txtNome" id="txtNome" value="@ViewBag.user_login" />
                 <input type="text" name="txtNome" id="txtNome" value="@ViewBag.rg_usu" />
                 <input type="text" name="txtNome" id="txtNome" value="@ViewBag.senha_login" />
+            </div>
+            <div>
+                @Html.ActionLink("VER CLIENTES", "ClientesCadastrados")
             </div>
         }
     </section>
