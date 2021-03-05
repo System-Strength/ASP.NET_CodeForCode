@@ -5,11 +5,90 @@
 }
 
 <style>
-    section{
+    section {
         display: inline-flex;
-        background: red;
-        margin-left: 15%;
+        margin: 2% 25%;
+        text-align: center;
     }
+
+        section h2 {
+            font: bold 20pt Comic Sans MS, "sans-serif";
+            color: #6b4d41;
+            text-transform: uppercase;
+        }
+
+    .container_pesq {
+        padding: 5%;
+    }
+
+    .busca_cli {
+        font: normal 16pt Comic Sans MS, "sans-serif";
+        border: none;
+        border-bottom: solid 3px #9f4845;
+        background: none;
+        width: 50%;
+    }
+
+        .busca_cli::placeholder {
+            font: bold 16pt Comic Sans MS, "sans-serif";
+            color: #707070;
+            opacity: 50%;
+        }
+
+    .btn_busca {
+        font: normal 12pt Comic Sans MS, "sans-serif";
+        color: #fff;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #b09081;
+        transition: 0.5s;
+    }
+        .btn_busca:hover {
+            background: #6b4d41;
+        }
+    .container_resul {
+        background-color: none;
+    }
+
+        .container_resul > input {
+            font: bold 15pt Candara;
+            padding: 8px;
+            width: 25vw;
+            border-radius: 5px;
+            border: solid 4px #FFD500;
+            outline: none;
+            margin: 2rem 5em;
+        }
+        .container_resul > input::placeholder{
+            font: bold 16pt Comic Sans MS, "sans-serif";
+            opacity: 60%;
+        }
+        .footer{
+            justify-content: center;
+            display:flex;
+            padding:2%;
+        }
+            .footer > .btnVerCli {
+                cursor: pointer;
+                width: 16vw;
+                display: flex;
+                padding: 15px;
+                justify-content: center;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 25px;
+                border: none;
+                color: #fff;
+                font: bold 14pt Candara;
+                text-transform: uppercase;
+                background-color: #b78278;
+                color: #fff;
+                transition: 0.5s;
+            }
+                .footer > .btnVerCli:hover {
+                    background: #6b4d41;
+                }
 </style>
 <body>
     <section>
@@ -17,18 +96,20 @@
         {
             <h2>Buscar Cliente</h2>
             <div class="container_pesq">
-                <input type="search" class="busca_cli" name="txtRG" id="txtRG" placeholder="Buscar Cliente" value="@ViewBag.rg_usu">
-                <input type="submit" value="Buscar" name="btn" id="btn">
+                <input type="search" class="busca_cli" name="txtRG" id="txtRG" placeholder="Informe o RG do Cliente" value="@ViewBag.rg_usu">
+                <input type="submit" value="Buscar" name="btn" id="btn" class="btn_busca">
             </div>
             <div class="container_resul">
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.id_usu" />
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.user_login" />
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.rg_usu" />
-                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.senha_login" />
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.id_usu" placeholder="ID" disabled/>
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.user_login" placeholder="NOME DE USUÁRIO"  disabled/>
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.rg_usu" placeholder="RG"  disabled/>
+                <input type="text" name="txtNome" id="txtNome" value="@ViewBag.senha_login" placeholder="SENHA"  disabled/>
             </div>
-            <div>
-                @Html.ActionLink("VER CLIENTES", "ClientesCadastrados")
+            <div class="footer">
+                @Html.ActionLink("VER CLIENTES", "ClientesCadastrados", "Funcionario", new { @class="btnVerCli"})
             </div>
         }
     </section>
 </body>
+
+
