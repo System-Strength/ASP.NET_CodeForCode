@@ -9,6 +9,8 @@ create table tbl_conta(
     senha_login varchar(14) not null
 );
 
+select * from tbl_conta;
+
 create table tbl_categoria(
 	cd_cat int primary key auto_increment,
     nm_cat varchar(50) not null

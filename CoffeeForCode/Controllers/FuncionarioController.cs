@@ -119,10 +119,10 @@ namespace CoffeeForCode.Controllers
 
             while (dataReaderRG.Read())
             {
-                conta.id_usu = int.Parse(dataReaderRG[1].ToString());
-                conta.user_login = dataReaderRG[2].ToString();
-                conta.rg_usu = dataReaderRG[3].ToString();
-                conta.senha_login = dataReaderRG[4].ToString();
+                conta.id_usu = int.Parse(dataReaderRG[0].ToString());
+                conta.user_login = dataReaderRG[1].ToString();
+                conta.rg_usu = dataReaderRG[2].ToString();
+                conta.senha_login = dataReaderRG[3].ToString();
             }
 
             con.MyDesConectarBD();
