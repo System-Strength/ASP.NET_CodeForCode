@@ -172,6 +172,11 @@ namespace CoffeeForCode.Controllers
             return View();
         }
 
+        public ActionResult Cadastra_Cafe()
+        {
+            return View();
+        }
+
 
 
         public ActionResult Info()
