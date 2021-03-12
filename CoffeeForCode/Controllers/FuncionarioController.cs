@@ -167,18 +167,35 @@ namespace CoffeeForCode.Controllers
 
             return View();
         }
-        public ActionResult Categoria()
+        public ActionResult CategoriaProd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CategoriaProd(Categoria categoria)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoCategoria = new CategoriaDAO();
+                return RedirectToAction("CadastrarProd");
+            }
+            return View(categoria);
+        }
+        public ActionResult CadastrarProd()
         {
             return View();
         }
 
-        public ActionResult Cadastra_Cafe()
+        [HttpPost]
+        public ActionResult CadastrarProd(Categoria categoria)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var metodoCategoria = new CategoriaDAO();
+                return RedirectToAction("CadastrarProd");
+            }
+            return View(categoria);
         }
-
-
-
         public ActionResult Info()
         {
             return View();

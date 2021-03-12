@@ -10,5 +10,6 @@ namespace AppBancoDominio
     {
         public int cd_cat { get; set; }
         public string nm_cat { get; set; }
+
     }
 }
