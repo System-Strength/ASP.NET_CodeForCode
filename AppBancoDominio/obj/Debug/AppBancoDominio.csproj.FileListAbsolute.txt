@@ -4,3 +4,6 @@ C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\Coffee
 C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.csproj.CoreCompileInputs.cache
 C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.dll
 C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.pdb
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDominio\obj\Debug\AppBancoDominio.csproj.CopyComplete

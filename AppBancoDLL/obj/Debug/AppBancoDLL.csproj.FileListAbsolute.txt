@@ -22,3 +22,5 @@ C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\Coffee
 C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDLL\obj\Debug\AppBancoDLL.csproj.CopyComplete
 C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDLL\obj\Debug\AppBancoDLL.dll
 C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDLL\obj\Debug\AppBancoDLL.pdb
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Matheus Souza\OneDrive\Documentos\ASP NET\Projetos\CoffeeForCode\CoffeeForCode\AppBancoDLL\bin\Debug\Newtonsoft.Json.xml

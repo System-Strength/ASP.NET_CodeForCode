@@ -2,6 +2,12 @@
 using AppBancoDLL;
 using AppBancoDominio;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Mvc;
 
 namespace CoffeeForCode.Controllers
@@ -11,6 +17,8 @@ namespace CoffeeForCode.Controllers
         Banco con = new Banco();
         Conta conta = new Conta();
         CriaContaDAO criaConta = new CriaContaDAO();
+
+        string baseUrl = "https://coffeeforcode.herokuapp.com/";
 
         // GET: Funcionario
         public ActionResult Home()
@@ -170,16 +178,6 @@ namespace CoffeeForCode.Controllers
         public ActionResult CategoriaProd()
         {
             return View();
-        }
-        [HttpPost]
-        public ActionResult CategoriaProd(Categoria categoria)
-        {
-            if (ModelState.IsValid)
-            {
-                var metodoCategoria = new CategoriaDAO();
-                return RedirectToAction("CadastrarProd");
-            }
-            return View(categoria);
         }
         public ActionResult CadastrarProd()
         {
